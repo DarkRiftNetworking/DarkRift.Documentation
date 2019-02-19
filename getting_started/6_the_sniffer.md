@@ -20,6 +20,8 @@ There are a number of filters you can use with the sniffer:
 
 You can specify multiple filters at the same time and they will logically AND together (i.e. a message has to satisfy both filters to be printed) and you can add multiple sniffing rules and they will logically OR (i.e. a message will be printed if it satisfies any defined sniffing rule).
 
+Additionally, you can specify the `-h` flag to see that data output in hexadecimal. Though be wary if you have large messages because it might get hard to read!
+
 Have a play with it in some of the example scenes; you probably won’t be able to have quite as much fun with it in our tutorial game since we only ever send one tag from the clients!
 
 For those of you who knew the original system in DarkRift 1 hopefully you’ll appreciate how much better this is!
