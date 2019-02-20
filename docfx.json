@@ -5,9 +5,9 @@
         {
           "src": "../",
           "files": [
-            "DarkRift 2/DarkRift/**.cs",
-            "DarkRift 2/DarkRift.Client/**.cs",
-            "DarkRift 2/DarkRift.Server/**.cs"
+            "DarkRift/**.cs",
+            "DarkRift.Client/**.cs",
+            "DarkRift.Server/**.cs"
           ],
           "exclude": [
             "**/bin/**",
