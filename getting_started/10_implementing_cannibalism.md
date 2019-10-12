@@ -1,5 +1,5 @@
 # Implementing Cannibalism
-Since we’ve built the eating system generic it’s easy to let other players get eaten. Add the following just after the food eating foreach loop:
+Since we’ve built the eating system generic it’s easy to let other players get eaten. **Add** the following just **after the food eating foreach loop**:
 ```csharp
 foreach (Player p in players.Values)
 {
@@ -11,7 +11,7 @@ foreach (Player p in players.Values)
     }
 }
 ```
-I’ll let you implement Kill how you see fit, it’s probably best to send a ‘killed’ message to the player so that they can show a game over screen.
+I’ll let you implement `Kill` how you see fit, it’s probably best to **send** a ‘killed’ **message** to the player so that they can show a **game over** screen.
 
 And that’s it! Our game is complete. If you want to continue, here are some suggestions for extensions or alternatively you can go onto the advanced topics if you want more DarkRift!
 - Full GUI

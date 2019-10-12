@@ -1,6 +1,6 @@
 # The Unity Scene
 ## Setting Up DarkRift
-In a blank Unity scene add an empty GameObject, rename it Network and then add a DarkRift -> Client component.
+In a blank Unity scene add an empty GameObject, rename it `Network` and then add a `DarkRift -> Client` component.
 
 This is the first fundamental DarkRift part, the client script connects to the server for you and allows you to send and receive messages - plus it even has some useful tools built in for you! Let’s look at the Unity interface for it.
 
@@ -18,7 +18,7 @@ Leave everything as is.
 ## Players
 Download or make a white circle with a transparent background so we can colour it for different players, the higher the resolution the better. I used this [big white circle](https://goo.gl/images/hK8leu).
 
-Create a C# script called AgarObject.cs and add the following helper functions that we’ll come to use later:
+Create a C# script called `AgarObject` and add the following helper functions that we’ll come to use later:
 ```csharp
 [RequireComponent(typeof(Renderer))]
 public class AgarObject : MonoBehaviour
@@ -44,25 +44,24 @@ public class AgarObject : MonoBehaviour
             transform.position = Vector3.MoveTowards(transform.position, movePosition, speed * Time.deltaTime);
     }
 
-    internal void SetColor(Color32 color)
+    public void SetColor(Color32 color)
     {
         Renderer renderer = GetComponent<Renderer>();
-
         renderer.material.color = color;
     }
 
-    internal void SetRadius(float radius)
+    public void SetRadius(float radius)
     {
         transform.localScale = new Vector3(radius * scale, radius * scale, 1);
     }
 
-    internal void SetMovePosition(Vector3 newPosition)
+    public void SetMovePosition(Vector3 newPosition)
     {
         movePosition = newPosition;
     }
 }
 ```
-Add that and the big circle to an empty game object and make it a prefab called NetworkPlayer then create a new C# script called MouseController; add the following code to the update routine:
+Add this script to a new Sprite GameObject and assign the white circle sprite to the sprite field of the `SpriteRenderer`. Make it a prefab called `NetworkPlayer` and then create a new C# script called `MouseController`:
 ```csharp
 [RequireComponent(typeof(AgarObject))]
 public class MouseController : MonoBehaviour
@@ -83,17 +82,17 @@ public class MouseController : MonoBehaviour
 	}
 }
 ```
-Add the MouseController script to the player game object and make it a separate prefab called ControllablePlayer (for clarity you should now have 2 versions: NetworkPlayer without MouseController and ControllablePlayer with MouseController). You should be able to test your player and get a feel for the right speed value for you.
+Add the MouseController script to the `NetworkPlayer` GameObject and make it a separate prefab called `ControllablePlayer` (for clarity you should now have **2 versions**: `NetworkPlayer` **without** `MouseController` and `ControllablePlayer` **with** `MouseController`). You should be able to test your player and get a feel for the right speed value for you.
 
-Make sure the speed on the NetworkPlayer is maybe 1.5x the speed on the ControllablePlayer.
+Make sure the speed on the `NetworkPlayer` is maybe **1.5x** the speed on the `ControllablePlayer`.
 
 ## Food
 Download or make a food-like white square with a transparent background so we can give it different colours. Since it’s a square the transparent background might not be necessary. I used this [big white square](https://goo.gl/images/lOA64v).
         
-Make a new prefab consisting only of the square and the AgarObject script, set the speed of it to 0 and then ensure your scene only consists of our Network object and Main Camera.
+Make a new prefab consisting only of the `square` and the `AgarObject` script, set the **speed** of it to **0** and then ensure your scene only consists of our `Network` object and `Main Camera`.
 
 ## Camera
-Lastly, before we get started with the networking create a CameraFollow script containing the following:
+Lastly, before we get started with the networking create a `CameraFollow` script containing the following:
 ```csharp
 public class CameraFollow : MonoBehaviour
 {
@@ -116,8 +115,8 @@ public class CameraFollow : MonoBehaviour
     }
 }
 ```
-Add the CameraFollow script to the main camera so we can use it later and set the camera’s background colour to a white colour.
+Add the `CameraFollow` script to the `Main Camera` so we can use it later and set the **camera’s background** colour to a **white** colour.
 
-Because we’re making a 2D game make sure your Scene view is in 2D mode and make the camera orthographic.
+Because we’re making a 2D game make sure your **Scene View** is in **2D mode** and make the camera **orthographic**.
 
 Now is a good time to save and backup your work/commit if you haven’t done so yet. That’s all the client side logic we’re going to do for now!
