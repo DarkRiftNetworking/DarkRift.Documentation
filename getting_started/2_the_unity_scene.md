@@ -84,7 +84,7 @@ public class MouseController : MonoBehaviour
 ```
 Add the MouseController script to the `NetworkPlayer` GameObject and make it a separate prefab called `ControllablePlayer` (for clarity you should now have **2 versions**: `NetworkPlayer` **without** `MouseController` and `ControllablePlayer` **with** `MouseController`). You should be able to test your player and get a feel for the right speed value for you.
 
-Make sure the speed on the `NetworkPlayer` is maybe **1.5x** the speed on the `ControllablePlayer`.
+Make sure the **speed** on the `NetworkPlayer` is maybe **1.5x** the speed on the `ControllablePlayer`.
 
 ## Food
 Download or make a food-like white square with a transparent background so we can give it different colours. Since it’s a square the transparent background might not be necessary. I used this [big white square](https://goo.gl/images/lOA64v).

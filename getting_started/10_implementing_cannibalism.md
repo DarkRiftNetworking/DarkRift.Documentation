@@ -1,5 +1,5 @@
 # Implementing Cannibalism
-Since we’ve built the eating system generic it’s easy to let other players get eaten. **Add** the following just **after the food eating foreach loop**:
+Since we’ve built the eating system generic it’s easy to let other players get eaten. Add the following just **after the food eating foreach loop**:
 ```csharp
 foreach (Player p in players.Values)
 {

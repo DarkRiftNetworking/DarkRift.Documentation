@@ -1,5 +1,5 @@
 # Disconnections
-You’ve probably noticed by now that **players** **don’t disappear** when they exit the game, lets jump back into the code for a bit and resolve that.
+You’ve probably noticed by now that players don’t disappear when they exit the game, lets jump back into the code for a bit and resolve that.
 
 ## Disconnection Events
 We can get the server to tell us when clients **disconnect** in the same way we get it to tell us when they **connect**. Add the following to the constructor of the `AgarPlayerManager` plugin:

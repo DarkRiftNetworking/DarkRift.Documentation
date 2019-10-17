@@ -1,6 +1,6 @@
 # Movement
 ## Sending Our Position
-In the Unity project create a **new C# script** called ``Player``, this is going to **send** our **position** to the **server** every time we **move**. Add the following code to it:
+In the Unity project create a new C# script called `Player`, this is going to **send** our **position** to the server every time we **move**. Add the following code to it:
 ```csharp
 using DarkRift.Client;
 using DarkRift.Client.Unity;
@@ -33,7 +33,7 @@ public class Player : MonoBehaviour
     }
 }
 ```
-Add it in your ``ControllablePlayer`` **prefab**. In our ``PlayerSpawner`` **change** our **if statement** in the **while loop** **to**:
+Add it in your `ControllablePlayer` prefab. In our `PlayerSpawner` change our **if statement** in the **while loop** to:
 ```csharp
 if (id == client.ID)
 {
@@ -47,7 +47,7 @@ else
     obj = Instantiate(networkPrefab, position, Quaternion.identity) as GameObject;
 } 
 ```
-Now that’s done try to **fill** in the ``Player`` **class** with code to **send** our **position**. All that needs to be sent is the **x** and **y** components of `transform.position`.
+Now that’s done try to fill in the `Player class` with code to **send** our **position**. All that needs to be sent is the **x** and **y** components of `transform.position`.
 If you’re stuck, here’s the code I wrote **after** the **Distance if statement**:
 ```csharp
 using (DarkRiftWriter writer = DarkRiftWriter.Create())
@@ -59,16 +59,16 @@ using (DarkRiftWriter writer = DarkRiftWriter.Create())
         Client.SendMessage(message, SendMode.Unreliable);
 }
 ```
-Don't forget tho add the **tag** to the `Tags` file:
+Don't forget tho add the tag to the `Tags` file:
 ```csharp
 public static readonly ushort MovePlayerTag = 1;
 ```
-None of this should look unfamiliar, we create a **writer** and package the data we want to send, put that inside a **message** with the **movement tag** and then send **unreliably** (if the server doesn’t get the position it’s not the end of the world because we’ll send another very shortly anyway).
+None of this should look unfamiliar, we create a **writer** and package the data we want to send, put that inside a **message** with the **movement** tag and then send **unreliably** (if the server doesn’t get the position it’s not the end of the world because we’ll send another very shortly anyway).
 
 ## Updating the Server Position
-On our server we need to **track** the **positional changes** of **each player** so that new players connecting always get the latest position, we also need to **send** this **movement** update message out to **all other players**.
+On our server we need to track** the positional changes of **each player** so that new players connecting always get the latest position, we also need to **send** this **movement** update message out to **all other players**.
 
-In our **server** plugin **append** the following line to the `ClientConnected` method:
+In our **server** plugin append the following line to the `ClientConnected` method:
 ```csharp
 e.Client.MessageReceived += MovementMessageReceived;
 ```
@@ -107,10 +107,10 @@ void MovementMessageReceived(object sender, MessageReceivedEventArgs e)
     }
 }
 ```
-Once again, the first few lines of this should look familiar. The **writer** here is just **updating the contents of the message** so we include the player **ID** (we need to know **who** sent it when we receive on the client) and we’re including the **radius** here for later. Lastly, we send off the message to **everyone** except the sender so they all **update their position**. Easy!
+Once again, the first few lines of this should look familiar. The **writer** here is just **updating** the contents of the message so we include the player **ID** (we need to know **who** sent it when we receive on the client) and we’re including the **radius** here for later. Lastly, we send off the message to **everyone** except the sender so they all update their position. Easy!
         
 ## Updating the Client Position</title>    
-To **handle movement** on the game we’re going to move all clients with a **single manager**. Create a **new C# script** in your **Unity** project called `NetworkPlayerManager` and add the following:
+To **handle movement** on the game we’re going to move all clients with a single manager. Create a new C# script in your Unity project called `NetworkPlayerManager` and add the following:
 ```csharp
 using DarkRift.Client;
 using DarkRift.Client.Unity;
@@ -129,17 +129,17 @@ public class NetworkPlayerManager : MonoBehaviour
     }
 }
 ```
-**Add** the script to our `Network` object and assign the client field. Add the following field to `PlayerSpawner` and assign it in the **inspector**:
+Add the script to our `Network object` and assign the client field. Add the following field to `PlayerSpawner` and assign it in the **inspector**:
 ```csharp
 [SerializeField]
 [Tooltip("The network player manager.")]
 NetworkPlayerManager networkPlayerManager;
 ```
-Finally **add** this line to the **bottom** of the **while loop** in your ``SpawnPlayer`` method:
+Finally add this line to the **bottom** of the **while loop** in your `SpawnPlayer` method:
 ```csharp
 networkPlayerManager.Add(id, agarObj);
 ```
-Have a go at **writing** the **logic to receive the movement** messages yourself, don’t forget you can **look back** at the receive code in `PlayerSpawner` and the plugin code we wrote for reference. If you get stuck, here’s my implementation:
+Have a go at writing the logic to receive the movement messages yourself, don’t forget you can **look back** at the receive code in `PlayerSpawner` and the plugin code we wrote for reference. If you get stuck, here’s my implementation:
 ```csharp
 public void Awake()
 {
