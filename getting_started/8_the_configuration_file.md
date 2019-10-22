@@ -3,7 +3,7 @@ Let’s have another moment out to look through the **configuration** file. The 
 
 Open the `Server.config` file that’s in the same directory as the server executable.
 
-This file path can be specified as the first argument when you invoke the server from the command line, i.e. `DarkRift.Server.Console.exe "MyPath.config"`, but by default it will just search for `Server.config`. Do note, any settings changed in the server configuration won’t be reflected in DarkRift until you **restart** the server.
+This file path can be specified as the first argument when you invoke the server from the command line, i.e. `DarkRift.Server.Console.exe "MyPath.config"`, but by default it will just search for Server.config. Do note, any settings changed in the server configuration won’t be reflected in DarkRift until you **restart** the server.
 
 The `server` tag defines how DarkRift operates on the network, for example if you wanted to change **port** then you’d find that setting here. In general, this is settings for the properties found in the `ClientManager`.
 

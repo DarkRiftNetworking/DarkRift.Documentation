@@ -82,7 +82,7 @@ public class MouseController : MonoBehaviour
 	}
 }
 ```
-Add the MouseController script to the `NetworkPlayer` GameObject and make it a separate prefab called `ControllablePlayer` (for clarity you should now have **2 versions**: `NetworkPlayer` **without** `MouseController` and `ControllablePlayer` **with** `MouseController`). You should be able to test your player and get a feel for the right speed value for you.
+Add the `MouseController` script to the `NetworkPlayer` GameObject and make it a separate prefab called `ControllablePlayer` (for clarity you should now have **2 versions**: `NetworkPlayer` **without** `MouseController` and `ControllablePlayer` **with** `MouseController`). You should be able to test your player and get a feel for the right speed value for you.
 
 Make sure the **speed** on the `NetworkPlayer` is maybe **1.5x** the speed on the `ControllablePlayer`.
 
@@ -115,7 +115,7 @@ public class CameraFollow : MonoBehaviour
     }
 }
 ```
-Add the `CameraFollow` script to the `Main Camera` so we can use it later and set the **camera’s background** colour to a **white** colour.
+Add the `CameraFollow` script to the Main Camera so we can use it later and set the **camera’s background** colour to a **white** colour.
 
 Because we’re making a 2D game make sure your **Scene View** is in **2D mode** and make the camera **orthographic**.
 

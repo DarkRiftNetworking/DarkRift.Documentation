@@ -47,7 +47,7 @@ else
     obj = Instantiate(networkPrefab, position, Quaternion.identity) as GameObject;
 } 
 ```
-Now that’s done try to fill in the `Player class` with code to **send** our **position**. All that needs to be sent is the **x** and **y** components of `transform.position`.
+Now that’s done try to fill in the `Player` class with code to **send** our **position**. All that needs to be sent is the **x** and **y** components of transform.position.
 If you’re stuck, here’s the code I wrote **after** the **Distance if statement**:
 ```csharp
 using (DarkRiftWriter writer = DarkRiftWriter.Create())
@@ -68,7 +68,7 @@ None of this should look unfamiliar, we create a **writer** and package the data
 ## Updating the Server Position
 On our server we need to track** the positional changes of **each player** so that new players connecting always get the latest position, we also need to **send** this **movement** update message out to **all other players**.
 
-In our **server** plugin append the following line to the `ClientConnected` method:
+In our **server** plugin append the following line to the ClientConnected method:
 ```csharp
 e.Client.MessageReceived += MovementMessageReceived;
 ```
@@ -129,7 +129,7 @@ public class NetworkPlayerManager : MonoBehaviour
     }
 }
 ```
-Add the script to our `Network object` and assign the client field. Add the following field to `PlayerSpawner` and assign it in the **inspector**:
+Add the script to our `Network` object and assign the client field. Add the following field to `PlayerSpawner` and assign it in the **inspector**:
 ```csharp
 [SerializeField]
 [Tooltip("The network player manager.")]
@@ -164,6 +164,6 @@ void MessageReceived(object sender, MessageReceivedEventArgs e)
     }
 }
 ```
-Go into `Edit -> Project Settings -> Player` and **check** “Run in Background”.
+Go into Edit -> Project Settings -> Player and **check** “Run in Background”.
 
 Build it and test it! We should have movement!
