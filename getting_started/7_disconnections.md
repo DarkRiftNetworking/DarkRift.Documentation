@@ -50,7 +50,7 @@ And I **changed** the subscribe call to:
 ```csharp
 client.MessageReceived += MessageReceived;
 ```
-Finally, I added a DestroyPlayer method to our `NetworkPlayerManager`:
+Finally, I added a `DestroyPlayer` method to our `NetworkPlayerManager`:
 ```csharp
 public void DestroyPlayer(ushort id)
 {
@@ -61,6 +61,6 @@ public void DestroyPlayer(ushort id)
     networkPlayers.Remove(id);
 }
 ```
-You can also remove some of the checks from the SpawnPlayer routine.
+You can also remove some of the checks from the `SpawnPlayer` routine.
 
 Hopefully you’re now getting the hang of it and feel you can implement new features on your own. Once you know where things are in DarkRift it’s pretty much just the same principles replayed over!

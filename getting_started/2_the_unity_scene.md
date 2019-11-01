@@ -89,7 +89,7 @@ Make sure the **speed** on the `NetworkPlayer` is maybe **1.5x** the speed on th
 ## Food
 Download or make a food-like white square with a transparent background so we can give it different colours. Since it’s a square the transparent background might not be necessary. I used this [big white square](https://goo.gl/images/lOA64v).
         
-Make a new prefab consisting only of the `square` and the `AgarObject` script, set the **speed** of it to **0** and then ensure your scene only consists of our `Network` object and `Main Camera`.
+Make a new prefab consisting only of the square and the `AgarObject` script, set the **speed** of it to **0** and then ensure your scene only consists of our `Network` object and `Main Camera`.
 
 ## Camera
 Lastly, before we get started with the networking create a `CameraFollow` script containing the following:
@@ -115,7 +115,7 @@ public class CameraFollow : MonoBehaviour
     }
 }
 ```
-Add the `CameraFollow` script to the Main Camera so we can use it later and set the **camera’s background** colour to a **white** colour.
+Add the `CameraFollow` script to the `Main Camera` so we can use it later and set the **camera’s background** colour to a **white** colour.
 
 Because we’re making a 2D game make sure your **Scene View** is in **2D mode** and make the camera **orthographic**.
 

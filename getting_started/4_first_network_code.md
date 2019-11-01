@@ -47,7 +47,7 @@ void ClientConnected(object sender, ClientConnectedEventArgs e)
 ```
 The `ClientManager` is responsible for keeping track of any clients that are connected to the **server** so you can use it to access clients and it can inform you when clients **connect** or **disconnect**. In this line, we’re **subscribing** to the `ClientConnected` event so whenever someone connects our method will be called with the `ClientManager` in sender and details of the connection in the `ClientConnectedArgs`.
 
-Let’s give our newly connected player their own `Player` object. In our ClientConnected method add code to generate them a **new player** setup with random values:
+Let’s give our newly connected player their own `Player` object. In our `ClientConnected` method add code to generate them a **new player** setup with random values:
 ```csharp
 Random r = new Random();
 Player newPlayer = new Player(
@@ -64,7 +64,7 @@ And at the top of the class add a `MAP_WIDTH` constant:
 ```csharp
 const float MAP_WIDTH = 20;
 ```
-You might notice the sneaky e.Client.ID hiding in there. So that we can address the player when it’s on the Unity side we need to have an **identifier**, since the client will only have one `Player` object they control it’s sufficient to just use the server's ID that gets allocated to the client by DarkRift when it connects.
+You might notice the sneaky `e.Client.ID` hiding in there. So that we can address the player when it’s on the Unity side we need to have an **identifier**, since the client will only have one `Player` object they control it’s sufficient to just use the server's ID that gets allocated to the client by DarkRift when it connects.
 
 I’m using a value between 0 and 200 for each **colour** channel because if it’s too close to 255, 255, 255 we won’t be able to see the client against the **background**!
 
@@ -91,9 +91,9 @@ Whoa there! That got complicated quickly didn’t it!
 
 Let’s look through each part. We need to **convert** our `Player` to something we can send over the network and currently it’s an unsigned short, 3 floats and 3 bytes, which isn’t compatible with the internet. The `DarkRiftWriter` and `DarkRiftReader` are objects provided for you to make that conversion easier, we **write** all our fields into the **writer** and on the Unity side we’ll **read** them off in the **same order** with a **reader**.
 
-Next, we construct a Message. **Messages** essentially **wrap** data (all those values we stuffed into the `DarkRiftWriter`) and give them some simple header values that identify what the data actually **contains**. The first argument, **the tag**, is a single ushort that **identifies** what the message is about (think move player, use inventory object, send chat message etc.) and the second is our **data**. For now we can just use 0 as our tag.
+Next, we construct a `Message`. **Messages** essentially **wrap** data (all those values we stuffed into the `DarkRiftWriter`) and give them some simple header values that identify what the data actually **contains**. The first argument, **the tag**, is a single ushort that **identifies** what the message is about (think move player, use inventory object, send chat message etc.) and the second is our **data**. For now we can just use 0 as our tag.
 
-Finally, we get **all clients** currently **connected** to the **server** using ClientManager.GetAllClients(), utilise a little LINQ to remove the client that just connected (we’ll deal with him later) and then **send** the message to **each** client. **Don’t forgot that when you call `GetAllClients()` the client that just connected has already been added!**
+Finally, we get **all clients** currently **connected** to the **server** using `ClientManager.GetAllClients()`, utilise a little LINQ to remove the client that just connected (we’ll deal with him later) and then **send** the message to **each** client. **Don’t forgot that when you call `GetAllClients()` the client that just connected has already been added!**
 
 See? Easy! What were you worried about?
 
@@ -130,7 +130,7 @@ using (DarkRiftWriter playerWriter = DarkRiftWriter.Create())
 ```
 Hopefully this should be fairly self-explanatory from what we’ve already done, the only difference is that we keep writing into the **same writer** so that it’s all in **one message**. Note that we add the new player to the dictionary before enumerating over it so that it’s included in what we send to the player (otherwise they wouldn’t spawn themselves a player!)
 
-Another thing we skipped over was the using statement. Messages, DarkRiftWriters and DarkRiftReaders all implement `IDisposable`, not because they contain resources that need disposing of, but because when we call `Dispose` they are returned to an object pool so that next time you call Create they don't have to be reallocated. Technically the using statements are completely optional but you'll get much better performance with them left in! We'll cover recycling in more depth in the Advanced section.
+Another thing we skipped over was the `using` statement. Messages, DarkRiftWriters and DarkRiftReaders all implement `IDisposable`, not because they contain resources that need disposing of, but because when we call `Dispose` they are returned to an object pool so that next time you call Create they don't have to be reallocated. Technically the using statements are completely optional but you'll get much better performance with them left in! We'll cover recycling in more depth in the Advanced section.
 
 Finally, it’s a good idea to define **constants** for **tags** so that you can easily refer to them and modify them without side effects. Add a new file called `Tags` and put in a **static** class to collect all our tags:
 ```csharp        
@@ -139,7 +139,7 @@ static class Tags
     public static readonly ushort SpawnPlayerTag = 0;
 }
 ```
-And change the tag parameter in both of the Message.Create calls to: Tags.SpawnPlayerTag.
+And change the tag parameter in both of the `Message.Create` calls to: `Tags.SpawnPlayerTag`.
         
 ## Actually Spawning Players
 Now that we’ve written the server code for spawning players let’s add the **client** side code. Create a new file called `PlayerSpawner` in the Unity project and add the following code:
@@ -189,9 +189,9 @@ public class PlayerSpawner : MonoBehaviour
 
 In this you’ll notice we define a **reference** to a `UnityClient` object that we’ll fill from the **inspector**. This is the **component** that handles our **connection** to the server, we added it to the `Network` object in our Unity scene earlier, remember?
 
-The MessageReceived event we **subscribe** to is called whenever the client **receives** a message from the server. You can subscribe as many different handlers to this as you like but having **fewer** is generally easier to maintain and a little **faster**.
+The `MessageReceived` event we **subscribe** to is called whenever the client **receives** a message from the server. You can subscribe as many different handlers to this as you like but having **fewer** is generally easier to maintain and a little **faster**.
 
-One other important thing to note is that we call this from Awake. When you have the `UnityClient` set to connect in the Start routine it is important to make sure that you subscribe for all initial messages from Awake because otherwise you might miss messages if it connects before you subscribe!
+One other important thing to note is that we call this from `Awake`. When you have the `UnityClient` set to connect in the Start routine it is important to make sure that you subscribe for all initial messages from `Awake` because otherwise you might miss messages if it connects before you subscribe!
 
 Add the following code to **decode** our spawn packets:
 ```csharp
