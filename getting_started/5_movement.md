@@ -48,7 +48,7 @@ else
 } 
 ```
 Now that’s done try to fill in the `Player` class with code to **send** our **position**. All that needs to be sent is the **x** and **y** components of transform.position.
-If you’re stuck, here’s the code I wrote **after** the **Distance if statement**:
+If you’re stuck, here’s the code I wrote **after** the **distance if statement**:
 ```csharp
 using (DarkRiftWriter writer = DarkRiftWriter.Create())
 {
@@ -66,7 +66,7 @@ public static readonly ushort MovePlayerTag = 1;
 None of this should look unfamiliar, we create a **writer** and package the data we want to send, put that inside a **message** with the **movement** tag and then send **unreliably** (if the server doesn’t get the position it’s not the end of the world because we’ll send another very shortly anyway).
 
 ## Updating the Server Position
-On our server we need to track** the positional changes of **each player** so that new players connecting always get the latest position, we also need to **send** this **movement** update message out to **all other players**.
+On our server we need to track the positional changes of **each player** so that new players connecting always get the latest position, we also need to **send** this **movement** update message out to **all other players**.
 
 In our **server** plugin append the following line to the ClientConnected method:
 ```csharp

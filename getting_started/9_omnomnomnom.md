@@ -3,7 +3,7 @@ Let’s eat. I feel like our strange circles floating around their empty abyss a
 
 For this I’m deliberately going to leave out simple code snippets since you should now have a good enough understanding to be able to add the easy bits yourself. If you’re struggling, go back and look through the previous chapters and the code you’ve already written and, if all else fails, look it up in the complete project.
 
-Add a new C# file to our server plugin called `AgarFoodManager` and make the class a `DarkRift plugin` (first challenge!). Make sure you set `ThreadSafe` to **false** so you don’t have problems later!
+Add a new C# file to our server plugin called `AgarFoodManager` and make the class a DarkRift plugin (first challenge!). Make sure you set `ThreadSafe` to **false** so you don’t have problems later!
 
 Add a `HashSet` field called food that contains `FoodItem` objects and initialise it empty. Add the following definition of `FoodItem` to a new file:
 ```csharp
@@ -47,7 +47,7 @@ Switching to the Unity project, add a `FoodManager` MonoBehaviour and attach it 
 
 You should be able to test now and see lots of food appear on the map with your players!
 
-While we’re testing, add some code to set `the CameraFollow.Target` on our `Main Camera` to our player so that it follows them around.
+While we’re testing, add some code to set the `CameraFollow.Target` on our `Main Camera` to our player so that it follows them around.
 
 Let’s switch back to `AgarPlayerManager` and add in some code to actually eat the items of food! In our `MovementMessageReceived` method add the following code:
 ```csharp
