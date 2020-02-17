@@ -24,6 +24,8 @@
   href: hosting_a_server.md
 - name: Configuration Variables
   href: configuration_variables.md
+- name: Health Checks
+  href: health_checks.md
 - name: Unity Based Servers
   href: unity_based_servers.md
 - name: Matchmaking
