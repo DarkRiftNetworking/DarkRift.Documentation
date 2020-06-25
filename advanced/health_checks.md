@@ -7,7 +7,7 @@ While it is possible to test if a DarkRift server is ready for connections by co
 If you have `loadBydefault` disabled for plugins in configuration, or wish to specify extra properties to the plugin you can explicitly declare it:
 ```xml
 <plugins loadByDefault="false">
-  <plugin type="HttpHealthCheck" load="true"/>
+  <plugin type="HttpHealthCheck" load="true">
     <settings
       port="10666"
       host="localhost"
