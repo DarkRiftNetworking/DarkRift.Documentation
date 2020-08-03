@@ -32,3 +32,8 @@
   items:
   - name: <listener>
     href: listener.md
+- name: <metrics>
+  href: metrics.md
+  items:
+  - name: <metricsWriter>
+    href: metrics_writer.md

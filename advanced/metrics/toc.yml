@@ -1,0 +1,6 @@
+- name: Using The Metrics System
+  href: using_the_metrics_system.md
+- name: Setting Up Prometheus Metrics
+  href: setting_up_prometheus_metrics.md
+- name: Writing CustomMetric Writers
+  href: writing_custom_metrics_writers.md

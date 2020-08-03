@@ -9,16 +9,19 @@ If you have `loadBydefault` disabled for plugins in configuration, or wish to sp
 <plugins loadByDefault="false">
   <plugin type="HttpHealthCheck" load="true">
     <settings
-      port="10666"
-      host="localhost"
-      path="/health" />
+        host="localhost"
+        path="/health"
+        port="10666" />
   </plugin>
 </plugins>
 ```
 The properties have the following defaults:
-- `port` - defaults to `10666`
-- `host` - defaults to `localhost`
-- `path` - defaults to `/health`
+
+| Name   | Description                                       | Default   |
+|--------|---------------------------------------------------|-----------|
+| `host` | The host the health check will be started on.     | localhost |
+| `path` | The subpath the health check will be started on.  | health    |
+| `port` | The port the health check will be started on.     | 10666     |
 
 When queried with a `GET` request, a JSON response will be returned with a `200 OK` status if the server is running and accepting connections:
 ```json

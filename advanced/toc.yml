@@ -26,6 +26,9 @@
   href: configuration_variables.md
 - name: Health Checks
   href: health_checks.md
+- name: Metrics
+  href: metrics/toc.yml
+  homepage: metrics/using_the_metrics_system.md
 - name: Unity Based Servers
   href: unity_based_servers.md
 - name: Matchmaking
