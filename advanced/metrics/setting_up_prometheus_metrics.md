@@ -8,8 +8,8 @@ The `PrometheusEndpoint` plugin can be configured as the server's metrics writer
     <metricsWriter type="PrometheusEndpoint">
       <settings
         host="localhost"
-        path="/health"
-        port="10666" />
+        path="/metrics"
+        port="9796" />
     </metricsWriter>
   </metrics>
 ```
