@@ -10,6 +10,8 @@ The `<server>` element is used to define global server parameters and parameters
 | noDelay (deprecated) | true, false | Whether Nagle's algorithms should be disabled on TCP. Use listener configuration instead. |
 | maxStrikes (required) |  | The maximum number of strikes a client can be given before they're automatically disconnected from the server. |
 | useFallback (deprecated) | true, false | Whether the fallback networking system should be used. Use listener configuration instead. |
+| serverGroup (optional) | DefaultGroup | The group in the cluster this server belongs to. |
+| reconnectAttempts (optional) | 5 | The number of times to attempt to reconnect to a server in the cluster. |
 
 ## Child Elements
 There are no child elements for this element.

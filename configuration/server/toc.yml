@@ -32,3 +32,8 @@
   items:
   - name: <listener>
     href: listener.md
+- name: <serverRegistry>
+  href: server_registry.md
+  items:
+  - name: <serverRegistryConnector>
+    href: server_registry_connector.md

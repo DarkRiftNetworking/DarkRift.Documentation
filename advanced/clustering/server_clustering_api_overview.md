@@ -1,5 +1,5 @@
-Once a server is part of a cluster it becomes possible to communicate with other members of the cluster. This is primarily achieved using the remote server manager which will be discussed in brief here.
 # Server Clustering API Overview
+Once a server is part of a cluster it becomes possible to communicate with other members of the cluster. This is primarily achieved using the remote server manager which will be discussed in brief here.
 
 ## Remote Server Manager
 The `IRemoteServerManager` interface is a logical equivalent of the `IClientManager` interface for remote servers. It provides an API to access `IRemoteClient` objects (which are the logical equivalent of an `IClient`) and also to get details about the current server. Unlike the client manager however, the server manager provides the servers in via their respective server groups.
