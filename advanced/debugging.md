@@ -1,5 +1,5 @@
 # Debugging
-There are a number of ways to debug DarkRift plugins which will moke solving issues much faster for you. This will gide you through using some of them
+There are a number of ways to debug DarkRift plugins which will moke solving issues much faster for you. This will guide you through using some of them
 
 Firstly, we discussed it earlier but the sniffer is a good way of telling you what data is getting to the server and what header data it contains. If you think a message isn’t reaching the server then check with the sniffer!
 
