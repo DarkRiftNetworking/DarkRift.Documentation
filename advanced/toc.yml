@@ -37,5 +37,8 @@
   href: network_listeners.md
 - name: Round Trip Time
   href: round_trip_time.md
+- name: Clustering
+  href: clustering/toc.yml
+  homepage: clustering/index.md
 - name: Upgrading
   href: upgrading.md

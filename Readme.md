@@ -2,7 +2,7 @@
 This is the source repository for [DarkRift](https://www.darkriftnetworking.com) documentation.
 
 # Building the Documentation
-This documentation is built using [DocFx](https://dotnet.github.io/docfx/). 
+This documentation is built using [DocFx](https://dotnet.github.io/docfx/).
 
 Once you have installed DocFx you can build this project by simply running `docfx` from the project directory. The built documentation will be output to the `_site` folder.
 
@@ -10,7 +10,10 @@ Unless you have the source code for DarkRift, DocFx will be unable to generate t
 
 If you do have the source you can edit the `metadata/source` elements in the docfx.json file to point at the source code and thus build the reference documentation.
 
-# Contributions and Issues 
+# Diagrams
+Diagrams are made using [diagrams.net](https://app.diagrams.net) and the XML save file should be version controlled in the directory the diagrams are used in with the the PNG exports saved in `/images`.
+
+# Contributions and Issues
 Contributions and issues are most welcome.
 
 Any issues should be solely related to documentation however, issues related to the rest of DarkRift should be posted [here](https://github.com/DarkRiftNetworking/DarkRift-Networking) instead.

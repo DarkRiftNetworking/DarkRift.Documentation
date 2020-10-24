@@ -1,39 +1,6 @@
-- name: <server>
-  href: server.md
-- name: <pluginSearch>
-  href: plugin_search.md
-  items:
-  - name: <pluginSearchPath>
-    href: plugin_search_path.md
-- name: <data>
-  href: data.md
-- name: <logging>
-  href: logging.md
-  items:
-  - name: <logWriters>
-    href: log_writers.md
-    items:
-    - name: <logWriter>
-      href: log_writer.md
-- name: <plugins>
-  href: plugins.md
-  items:
-  - name: <plugin>
-    href: plugin.md
-- name: <databases>
-  href: databases.md
-  items:
-  - name: <database>
-    href: database.md
-- name: <cache>
-  href: cache.md
-- name: <listeners>
-  href: listeners.md
-  items:
-  - name: <listener>
-    href: listener.md
-- name: <metrics>
-  href: metrics.md
-  items:
-  - name: <metricsWriter>
-    href: metrics_writer.md
+- name: Server Configuration
+  href: server/toc.yml
+  homepage: server/index.md
+- name: System Configuration
+  href: system/toc.yml
+  homepage: system/index.md
