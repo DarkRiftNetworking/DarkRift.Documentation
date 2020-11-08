@@ -6,7 +6,7 @@ WriteEvent takes a message, log type and an optional exception (if one occurred)
 
 It’s recommended that you use WriteEvent fairly sparingly so that it’s easy to find the events later in your server logs but it is up to you how much you want to output!
 
-## Configuring Log Output</title>  
+## Configuring Log Output
 There are 3 log writers built into DarkRift: the ConsoleWriter, the DebugWriter and the FileWriter. The ConsoleWriter will output any messages to `Console.WriteLine` and so will appear in the standard out stream or console window if it's not been redirected. The DebugWriter will output any messages to `Debug.WriteLine` and so will appear in Visual Studio's debug windows for example.
 
 The FileWriter will output messages to the file that you specify allowing you to retain the logs easily. The file will be created at startup based on the path specified in the `file` attribute of the `settings` child element. E.g
