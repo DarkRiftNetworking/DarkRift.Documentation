@@ -40,5 +40,8 @@
 - name: Clustering
   href: clustering/toc.yml
   homepage: clustering/index.md
+- name: Internal Plugins
+  href: internal_plugins/toc.yml
+  homepage: internal_plugins/index.md
 - name: Upgrading
   href: upgrading.md
