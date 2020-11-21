@@ -1,10 +1,8 @@
 # Logging
 ## Writing to Logs
-As we've said before, there’s quite a bit of code to the logging system in order to facilitate it outputting to multiple sources and with different priorities. To plugins, however, there is a single method for logging: Plugin.WriteEvent.
+Logging in DarkRift is primarily done via the `Logger` class. This class exposes a number of methods for logging at the different levels: Trace, Info, Warning, Error, and Fatal. The log type allows you to specify how important the event is and hence will also determine what files it is output to, dependent on the configuration file.
 
-WriteEvent takes a message, log type and an optional exception (if one occurred) and will handle the write out to the necessary source. The log type allows you to specify how important the event is and hence will also determine what files it is output to, dependent on the configuration file.
-
-It’s recommended that you use WriteEvent fairly sparingly so that it’s easy to find the events later in your server logs but it is up to you how much you want to output!
+Each plugin is provided a default `Logger` available from the property `Plugin.Logger` but it is also possible to create your own `Logger` in Pro using `LogManager.GetLoggerFor()`.
 
 ## Configuring Log Output
 There are 3 log writers built into DarkRift: the ConsoleWriter, the DebugWriter and the FileWriter. The ConsoleWriter will output any messages to `Console.WriteLine` and so will appear in the standard out stream or console window if it's not been redirected. The DebugWriter will output any messages to `Debug.WriteLine` and so will appear in Visual Studio's debug windows for example.
@@ -17,7 +15,7 @@ The FileWriter will output messages to the file that you specify allowing you to
 ```
 The file path is formatted using `String.Format` where the first argument is DateTime.Now so files based on the date or time are possible (as shown above).
 
-The ConsoleWriter also accepts a `useFastAnsiColoring` boolean setting which switches the way it colors text output to use ANSI control codes. This option does not work on some older Windows systems so you may wish to disable it to use the standard console colouring system. The default is true.
+The ConsoleWriter also accepts a `useFastAnsiColoring` boolean setting which switches the way it colors text output to use ANSI control codes. This option does not work on some older Windows systems so you may wish to disable it to use the standard console coloring system. The default is true.
 
 ## Defining a Custom Log Writer
 LogWriters are implemented in the same way as plugins are but instead of inheriting from Plugin they inherit from LogWriter and instead of taking PluginLoadData they take LogWriterLoadData. They're loaded in using the same code system as plugins so you just need to drop them into your Plugins directory for them to be loaded.

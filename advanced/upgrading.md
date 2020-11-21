@@ -1,6 +1,6 @@
 # Upgrading from DarkRift 1
 Upgrading from DarkRift 1 is relatively simple. The architecture of DarkRift 1 and 2 are very similar and everything is still based around the modular plugin design. It's strongly reccomended to complete the tutorial before upgrading but this article with give you an overview of the major changes.
-      
+
 ## Object Oriented Servers
 The first major change is that DarkRift 2 has moved to base servers off objects rather than providing a static interface for things like the ConnectionManager. This allows you run multiple servers in parallel much more easily than before and makes for a generally more object oriended design.
 
@@ -64,7 +64,7 @@ See the reference documentation for more information on each class.
 | DarkRiftServer | DarkRiftServer |
 | DarkRiftUtilities | Superseded with new messages |
 | IManualDataProcessor | Superseeded by the Dispatcher |
-| Interface | Superseded, to log a message use Plugin.WriteEvent |
+| Interface | Superseded, to log a message use Plugin.Logger |
 | Mode | Superseded by ServerSpawnData |
 | PerformanceMonitor | No direct equivalent |
 | Plugin | Plugin |
@@ -78,5 +78,5 @@ See the reference documentation for more information on each class.
 
 ## Unity
 The main differences for Unity users is that the client and server are available as Unity components and so the details about them can be set in the inspector rather than by code. The classes for these are in the DarkRift.Client.Unity and DarkRift.Server.Unity namespaces.
-        
+
 It is still possible to use a code interface however, if you prefer.

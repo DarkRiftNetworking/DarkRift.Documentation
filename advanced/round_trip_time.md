@@ -51,5 +51,5 @@ When the ping acknowledgement is received the timer will be stopped and the roun
 Both `IClient` and `DarkRiftClient` have an `RoundTripTime` property which contains both the `LatestRtt` and a `SmoothedRtt` which is a moving average of the most recent round trip times. The `SmoothedRtt` should be used if you want to reduce the weight of anomalous results at the cost of a slight delay.
 
 ```csharp
-WriteEvent($"Latest RTT was {client.RoundTripTime.Rtt} and the smoothed RTT was {client.RoundTripTime.SmoothedRtt} over {client.RoundTripTime.RttSampleCount} samples.", LogType.Info);
+Logger.Info($"Latest RTT was {client.RoundTripTime.Rtt} and the smoothed RTT was {client.RoundTripTime.SmoothedRtt} over {client.RoundTripTime.RttSampleCount} samples.");
 ```
