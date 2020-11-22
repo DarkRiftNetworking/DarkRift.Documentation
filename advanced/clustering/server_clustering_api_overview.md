@@ -11,7 +11,7 @@ The following code is written from the perspective of a plugin.
 ### Accessing Servers
 In most cases you will access servers by knowing what group they're in.
 ```c#
-IServerGroup serverGroup = RemoteServerManager.GetServerGroup(groupName);
+IServerGroup serverGroup = RemoteServerManager.GetGroup(groupName);
 IRemoteServer[] remoteServers = serverGroup.GetAllRemoteServers();
 ```
 
