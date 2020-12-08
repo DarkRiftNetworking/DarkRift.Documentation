@@ -63,7 +63,7 @@ This is doing similar but instead of loading the serializable straight into the 
 
 To deserialize the object we can pass DarkRift the type argument and it will generate the object for us:
 ```csharp
-DarkRiftReader reader = message.Deserialize<Player>();
+var player = message.Deserialize<Player>();
 ```
 Or if you are reading it from among other data:
 ```csharp
