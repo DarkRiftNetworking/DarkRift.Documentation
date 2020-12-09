@@ -134,9 +134,9 @@ Another thing we skipped over was the `using` statement. Messages, DarkRiftWrite
 
 Finally, it’s a good idea to define **constants** for **tags** so that you can easily refer to them and modify them without side effects. Add a new file called `Tags` and put in a **static** class to collect all our tags:
 ```csharp        
-static class Tags
+public class Tags
 {
-    public static readonly ushort SpawnPlayerTag = 0;
+    public const ushort SpawnPlayerTag = 0;
 }
 ```
 And change the tag parameter in both of the `Message.Create` calls to: `Tags.SpawnPlayerTag`.
