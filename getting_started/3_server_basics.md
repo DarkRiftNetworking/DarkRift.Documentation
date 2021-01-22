@@ -10,6 +10,9 @@ Everything related to the **server** code is in the namespace `DarkRift.Server`,
 ## Setting up the Plugin
 Create a new `Class Library C# project` in Visual Studio named something like “AgarPlugin” and add **references** to `DarkRift.Server.dll` and `DarkRift.dll`.
 
+> [!WARNING]
+> If you are using the Free version of DarkRift you will need to create a .NET Framework plugin, only the .NET Core build of the Pro version of DarkRift supports .NET Core/Standard plugins.
+
 **Rename** the default class to `AgarPlayerManager` and rename the file similarly. Add using directives to the top of the file (`using DarkRift;` and `using DarkRift.Server;`) so that we have access to both `DarkRift.Server` and `DarkRift` **namespaces**.
 
 All plugins in DarkRift must **inherit** from `DarkRift.Server.Plugin` so that DarkRift can correctly discover and instantiate them and so it can easily read details about your plugin. It is also your entry point into DarkRift’s API so that you make changes on the correct server instances.
