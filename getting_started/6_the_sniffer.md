@@ -8,7 +8,7 @@ Currently DarkRift is just sitting there, occasionally telling you when someone 
 
 Now when you test you should see **every message** that **enters** the server get printed to the console window!
 
-Since that’s a mess of information lets narrow it down. Firstly though, you can use `sniffer remove <flags>` to remove a **previously** setup sniffer **rule**, for example `sniff remove -a`.
+Since that’s a mess of information lets narrow it down. Firstly though, you can use `sniffer remove <flags>` to remove a **previously** setup sniffer **rule**, for example `sniffer remove -a`.
         
 There are a number of filters you can use with the sniffer:
 
