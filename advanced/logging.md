@@ -23,3 +23,5 @@ LogWriters are implemented in the same way as plugins are but instead of inherit
 Each LogWriter has a WriteEvent argument that should handle writing the message to their output location. In most cases you should use WriteEventArgs.FormattedMessage as this is well optimized, will only be run once across all log writers and by keeping the same format for logs it is easier to read back.
 
 Of course it's possible to access the individual components of the event such as the sender, message, the time that it was logged etc.
+
+For easy testing, the `debug-logs` command will output a log line at each log level.

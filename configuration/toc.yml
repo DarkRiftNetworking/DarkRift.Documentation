@@ -1,6 +1,6 @@
 - name: Server Configuration
   href: server/toc.yml
   homepage: server/index.md
-- name: System Configuration
-  href: system/toc.yml
-  homepage: system/index.md
+- name: Cluster Configuration
+  href: cluster/toc.yml
+  homepage: cluster/index.md

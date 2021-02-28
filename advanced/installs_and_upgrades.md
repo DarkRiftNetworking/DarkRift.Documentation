@@ -55,3 +55,12 @@ It's worth a quick note here that there is one other event, `Loaded`, which is c
 You may have found that you can't get and cache a plugin reference from the constructor as it throws an exception; this is because the order plugins are loaded in is not specified so there is no guaranetee the server knows about the plugin you're requesting yet.
 
 Instead, this can be done in the `Loaded` event which guarantees all plugins have been loaded but the server will still not have been started yet so you know no other events will fire beforehand.
+
+```csharp
+protected override void Loaded(LoadedEventArgs args)
+{
+    base.Loaded(args);
+
+    Logger.Info("Plugin was loaded");
+}
+```

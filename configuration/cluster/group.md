@@ -1,5 +1,5 @@
 # Group Element
-The `<group>` element defines a group of servers in the system.
+The `<group>` element defines a group of servers in the cluster.
 
 ## Attributes
 | Attribute | Values | Description |
