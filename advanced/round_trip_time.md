@@ -17,7 +17,7 @@ using (Message message = Message.Create(writer))
 {
     message.MakePingMessage();
     ...
-    client.SendMessage(message);
+    client.SendMessage(message, SendMode.Unreliable);
 }
 ```
 
@@ -38,7 +38,7 @@ using (Message receivedMessage = args.GetMessage())
         {
             acknowledgementMessage.MakePingAcknowledgementMessage(receivedMessage);
             ...
-            client.SendMessage(acknowledgementMessage);
+            client.SendMessage(acknowledgementMessage, SendMode.Unreliable);
         }
     }
     ...
