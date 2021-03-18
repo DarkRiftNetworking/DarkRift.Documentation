@@ -1,5 +1,5 @@
 # Sniffer
-The `Sniffer` logs messages received by teh server.
+The `Sniffer` logs messages received by the server.
 
 ## Commands
 The following commands are exposed:
