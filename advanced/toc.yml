@@ -16,6 +16,8 @@
   href: commands.md
 - name: Installs and Upgrades
   href: installs_and_upgrades.md
+- name: Plugin Loading
+  href: plugin_loading.md
 - name: Recycling
   href: recycling.md
 - name: Dispatcher

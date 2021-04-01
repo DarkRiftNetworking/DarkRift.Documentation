@@ -3,9 +3,10 @@ The `<pluginSearchPath>` element is used to specify a probing path for the serve
 
 ## Attributes
 | Attribute | Values | Description |
-|-----------|--------|-------------| 
+|-----------|--------|-------------|
 | src (required) | Any file or folder | The location to search for plugins in. |
 | createDir | true, false | Whether the directory should be created if not present. |
+| dependencyResolutionStrategy | Standard, RecursiveFromFile (default), RecursiveFromDirectory | The way to resolve dependencies for the plugin. |
 
 ## Child Elements
 There are no child elements for this element.
