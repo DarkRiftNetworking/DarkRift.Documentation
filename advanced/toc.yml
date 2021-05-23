@@ -47,3 +47,5 @@
   homepage: internal_plugins/index.md
 - name: Upgrading
   href: upgrading.md
+- name: .NET Compatibility
+  href: dotnet_compatibility.md
