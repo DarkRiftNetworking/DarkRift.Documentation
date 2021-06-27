@@ -34,7 +34,7 @@ In DarkRift 2 the differences in licenses are based around features rather than 
 
 It's also important to note that there are now only two licenses (Free and Pro) rather than the three there were for DarkRift 1.
 
-## Naming</title>
+## Naming
 In DarkRift 2 a large number of the names have been changed to better reflect their purpose and use in Darkrift 2. The following tables show the direct replacements for DarkRift 1 classes and is intended as a lookup.
 
 See the reference documentation for more information on each class.
