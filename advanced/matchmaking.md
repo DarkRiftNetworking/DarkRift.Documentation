@@ -12,7 +12,7 @@ The ranking function is a method taking 2 entities and providing a value between
 
 The following forms a very simple matchmaker that would match based on player's levels where the max level they can reach is 100.
 ```csharp
-public class ExampleMatchmaker : RankingMatchmaker<Player>
+public class ExampleMatchmaker : RankingMatchmaker<int>
 {
     public override bool ThreadSafe => true;
 
@@ -27,7 +27,7 @@ public class ExampleMatchmaker : RankingMatchmaker<Player>
         return Math.Abs(entity1.Level - entity2.level) / 100f;
     }
 }
-```        
+```
 Lastly, in order for the matchmaker to work you need to specify a number of settings in the configuration file. Add the following to the plugins element:
 ```xml
 <plugin type="ExampleMatchmaker" load="true">
@@ -36,10 +36,10 @@ Lastly, in order for the matchmaker to work you need to specify a number of sett
             entitiesPerGroup="4"
             tickPeriod="500" />
 </plugin>
-```        
+```
 Since some of these options are quite complex they are documented in detail in a section below.
-        
-## Using the Matchmaker</title>      
+
+## Using the Matchmaker
 The matchmaker is accessible from your plugins like any other plugin is. Once you have a reference you can using the IMatchmaker interface to abstract the type of matchmaker away from your plugin.
 
 The IMatchmaker interface provides the basic Enqueueing methods and the GroupFormed event which will be invoked everytime a satisfactory group is found by the matchmaker. The enqueue methods also accept an individual callback and return an IMatchmakerQueueTask which allows you to query the state of the entities you queued, subscribe to events relating only to those entities, or cancel the matchmaking for that group.
@@ -59,7 +59,7 @@ IMatchmakerQueueTask<Player> task = matchmaker.EnqueueGroup(
 );
 ```
 
-## Matchmaker Configuration In Detail</title>
+## Matchmaker Configuration In Detail
 The matchmaker has a number of settings that must be configured in the Server.config file: discardThreshold, groupDiscardThreshold, entitiesPerGroup, and tickPeriod.
 
 The discard threshold is a useful tuning parameter that allows you to prune large parts of the search tree. If any two entities have a suitability metric beneath the discard threshold then they will not be put in a group together. By setting this value higher you prune a larger portion of the search tree and hence the matchmaker will use less resources but players will have less potential matches, setting this value lower prunes less of the search tree and will have a a higher resource cost but players will have more potential matches. With more potential matches you are likely to see faster but less high quality matchmaking.

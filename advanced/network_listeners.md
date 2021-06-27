@@ -3,7 +3,7 @@ Network Listeners are specialized plugins that provide the lowest level of netwo
 
 The server is shipped with two network listeners and you've probably already used at least one. The first is the BichannelListener which sends reliable data via TCP and unreliable data via UDP. This is the default for the console based server. The second is a modification of the BichannelListener, the CompatibilityBichannelListener, that uses the same system but via a different .NET API to circumnavigate some bugs in hosts like Unity.
 
-## Enabling a Network Listener</title>
+## Enabling a Network Listener
 NetworkListeners are configured in the listeners tag of the server configuration file. Each should have a unique name to identify them and a type which tells DR what Network Listener plugin to load. You can mix and match NetworkListeners to allow connections from multiple ports or via different protocols simultaneously etc.
 
 An example of a listener element, that would create a BichannelListener, would be:
@@ -30,7 +30,7 @@ class MyNetworkListener : NetworkListener
     
     public override void StartListening()
     {
-      //When a new client connects we need to call RegisterConnection(NetworkServerConnection connection)
+        //When a new client connects we need to call RegisterConnection(NetworkServerConnection connection)
     }
 }
 ```
@@ -38,40 +38,37 @@ class MyNetworkListener : NetworkListener
 class MyNetworkServerConnection : NetworkServerConnection
 {
         //Whether we're connected
-        public ConnectionState ConnectionState { get; }
+        public override ConnectionState ConnectionState { get; }
 
         //A list of endpoints we're connected to on the client
-        public IEnumerable<IPEndPoint> RemoteEndPoints { get; }
+        public override IEnumerable<IPEndPoint> RemoteEndPoints { get; }
         
         //Given a named endpoint this should return that
-        public IPEndPoint GetRemoteEndPoint(string name)
+        public override IPEndPoint GetRemoteEndPoint(string name)
         {
-            if (name == "tcp")
-                return tcpEndPoint;
-            else
-                throw new ArgumentException("Not a valid endpoint name!");
+
         }
         
         //Called once for initialization
-        public void StartListening()
+        public override void StartListening()
         {
         
         }
         
         //Sends a message reliably...
-        public bool SendMessageReliable(MessageBuffer message)
+        public override bool SendMessageReliable(MessageBuffer message)
         {
         
         }
                 
         //...Sends a message unreliably!
-        public bool SendMessageUnreliable(MessageBuffer message)
+        public override bool SendMessageUnreliable(MessageBuffer message)
         {
         
         }
         
         //Called when the server wants to disconnect the client
-        public bool Disconnect()
+        public override bool Disconnect()
         {
         
         }
@@ -85,40 +82,37 @@ Naturally, an appropriate connector is also required on the client side. This is
 class MyNetworkClientConnection : NetworkClientConnection
 {
     //Whether we're connected
-    public ConnectionState ConnectionState { get; }
+    public override ConnectionState ConnectionState { get; }
 
     //A list of endpoints we're connected to on the server
-    public IEnumerable<IPEndPoint> RemoteEndPoints { get; }
+    public override IEnumerable<IPEndPoint> RemoteEndPoints { get; }
     
     //Given a named endpoint this should return that
-    public IPEndPoint GetRemoteEndPoint(string name)
+    public override IPEndPoint GetRemoteEndPoint(string name)
     {
-        if (name == "tcp")
-            return tcpEndPoint;
-        else
-            throw new ArgumentException("Not a valid endpoint name!");
+        
     }
     
     //Called when DarkRiftClient.Connect is called
-    public void Connect()
+    public override void Connect()
     {
     
     }
 
     //Sends a message reliably...
-    public bool SendMessageReliable(MessageBuffer message)
+    public override bool SendMessageReliable(MessageBuffer message)
     {
     
     }
                 
     //...Sends a message unreliably!
-    public bool SendMessageUnreliable(MessageBuffer message)
+    public override bool SendMessageUnreliable(MessageBuffer message)
     {
     
     }
     
     //Called when the server wants to disconnect the client
-    public bool Disconnect()
+    public override bool Disconnect()
     {
         
     }

@@ -109,7 +109,7 @@ void MovementMessageReceived(object sender, MessageReceivedEventArgs e)
 ```
 Once again, the first few lines of this should look familiar. The **writer** here is just **updating** the contents of the message so we include the player **ID** (we need to know **who** sent it when we receive on the client) and we’re including the **radius** here for later. Lastly, we send off the message to **everyone** except the sender so they all update their position. Easy!
         
-## Updating the Client Position</title>    
+## Updating the Client Position
 To **handle movement** on the game we’re going to move all clients with a single manager. Create a new C# script in your Unity project called `NetworkPlayerManager` and add the following:
 ```csharp
 using DarkRift.Client;
