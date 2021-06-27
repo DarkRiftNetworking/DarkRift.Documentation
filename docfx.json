@@ -5,6 +5,7 @@
         {
           "src": "../",
           "files": [
+            "DarkRift.Documentation/buildwithpro.cs",
             "DarkRift/**.cs",
             "DarkRift.Client/**.cs",
             "DarkRift.Server/**.cs"
@@ -18,7 +19,10 @@
       ],
       "dest": "reference",
       "disableGitFeatures": false,
-      "disableDefaultFilter": false
+      "disableDefaultFilter": false,
+      "properties": {
+        "DefineConstants": "PRO"
+      }
     }
   ],
   "build": {
