@@ -45,6 +45,9 @@
 - name: Internal Plugins
   href: internal_plugins/toc.yml
   homepage: internal_plugins/index.md
+- name: Debugging Common Issues
+  href: debugging_common_issues/toc.yml
+  homepage: debugging_common_issues/index.md
 - name: Upgrading
   href: upgrading.md
 - name: .NET Compatibility
