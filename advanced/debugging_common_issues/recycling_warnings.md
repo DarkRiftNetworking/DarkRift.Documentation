@@ -1,7 +1,7 @@
 # Recycling Warnings
 ## Example
 ```
-10 DarkRiftReader objects were finalized last period. This is usually a sign that you are not recycling objects correctly.
+10 DarkRiftWriter objects were finalized last period. This is usually a sign that you are not recycling objects correctly.
 ```
 
 ## Description
