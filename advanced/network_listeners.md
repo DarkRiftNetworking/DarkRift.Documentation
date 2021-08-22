@@ -8,11 +8,8 @@ NetworkListeners are configured in the listeners tag of the server configuration
 
 An example of a listener element, that would create a BichannelListener, would be:
 ```xml
-<listener name="DefaultListener" type="BichannelListener">
-  <settings address="0.0.0.0"
-            port="4296"
-            ipVersion="IPv4"
-            noDelay="true" />
+<listener name="DefaultListener" type="BichannelListener" address="0.0.0.0" port="4296">
+  <settings noDelay="true" />
 </listener>
 ```
 ## Custom Network Listeners
