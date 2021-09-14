@@ -1,0 +1,8 @@
+- name: Understanding DarkRift's Object Pools
+  href: understanding_darkrifts_object_pools.md
+- name: Tuning Object Pools
+  href: tuning_object_pools.md
+- name: Pooled Custom Objects
+  href: pooling_custom_objects.md
+- name: List of Pooled Objects
+  href: list_of_pooled_objects.md

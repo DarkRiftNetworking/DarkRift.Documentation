@@ -42,6 +42,9 @@
 - name: Clustering
   href: clustering/toc.yml
   homepage: clustering/index.md
+- name: Object Pooling
+  href: object_pooling/toc.yml
+  homepage: object_pooling/index.md
 - name: Internal Plugins
   href: internal_plugins/toc.yml
   homepage: internal_plugins/index.md
