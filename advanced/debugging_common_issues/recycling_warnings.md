@@ -29,7 +29,7 @@ using (DarkRiftWriter writer = DarkRiftWriter.Create())
 A `using` statement is preferred to simply calling `Dispose()` as it also recycles the object when an exception occurs.
 
 ### Suppress the Warning
-`ObjectCacheMonitor` plugin is responsible for producing this warning and therefore the warning can be suppressed by simply disabling th plugin:
+`ObjectCacheMonitor` plugin is responsible for producing this warning and therefore the warning can be suppressed by simply disabling the plugin:
 ```xml
 <plugins>
   <plugin type="ObjectCacheMonitor" load="false" />

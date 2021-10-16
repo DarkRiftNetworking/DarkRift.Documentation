@@ -4,14 +4,14 @@ DarkRift includes a [Prometheus](https://prometheus.io/) metrics writer that pro
 ## Configuring the Plugin
 The `PrometheusEndpoint` plugin can be configured as the server's metrics writer using the below configuration:
 ```xml
-  <metrics>
-    <metricsWriter type="PrometheusEndpoint">
-      <settings
-        host="localhost"
-        path="/metrics"
-        port="9796" />
-    </metricsWriter>
-  </metrics>
+<metrics>
+  <metricsWriter type="PrometheusEndpoint">
+    <settings
+      host="localhost"
+      path="/metrics"
+      port="9796" />
+  </metricsWriter>
+</metrics>
 ```
 
 The following parameters can be set in the plugin's settings:
