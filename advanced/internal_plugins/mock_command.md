@@ -1,5 +1,5 @@
 # Mock Command
-The `MockCommand` simulates receiving a message from a client. This is mostly used for internal development of DarkRift.
+The `MockCommand` simulates receiving a message from a client. This is mostly used for internal development of %DarkRift.
 
 ## Commands
 The following commands are exposed:

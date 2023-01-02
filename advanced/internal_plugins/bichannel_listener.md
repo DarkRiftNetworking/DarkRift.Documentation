@@ -1,5 +1,5 @@
 # Bichannel Listener
-The `BichannelListener` (accessed by `AbstractBichannelListener`) in the `DarkRift.Server.Plugins.Listeners.Bichannel` namespace is a network listener that operates over TCP (for reliable traffic) and UDP (for unreliable traffic) concurrently.
+The `BichannelListener` (accessed by `AbstractBichannelListener`) in the `%DarkRift.Server.Plugins.Listeners.Bichannel` namespace is a network listener that operates over TCP (for reliable traffic) and UDP (for unreliable traffic) concurrently.
 
 ## Settings
 The following settings are exposed to configuration:

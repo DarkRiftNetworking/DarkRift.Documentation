@@ -5,7 +5,7 @@ Unhandled Exception: System.Reflection.TargetInvocationException: Exception has 
 'http://localhost:9796/' because it conflicts with an existing registration on the machine.
    at System.Net.HttpListener.AddAllPrefixes()
    at System.Net.HttpListener.Start()
-   at DarkRift.Server.Plugins.Metrics.Prometheus.PrometheusEndpoint..ctor(MetricsWriterLoadData metricsWriterLoadData)
+   at %DarkRift.Server.Plugins.Metrics.Prometheus.PrometheusEndpoint..ctor(MetricsWriterLoadData metricsWriterLoadData)
    ...
 ```
 
@@ -13,15 +13,15 @@ Unhandled Exception: System.Reflection.TargetInvocationException: Exception has 
 Unhandled Exception: System.Net.HttpListenerException: Failed to listen on prefix 'http://localhost:10666/' because it conflicts with an existing registration on the machine.
    at System.Net.HttpListener.AddAllPrefixes()
    at System.Net.HttpListener.Start()
-   at DarkRift.Server.Plugins.HealthCheck.HttpHealthCheck.Loaded(LoadedEventArgs args)
-   at DarkRift.Server.ExtendedPluginManagerBase`1.Loaded()
-   at DarkRift.Server.DarkRiftServer..ctor(ServerSpawnData spawnData, ClusterSpawnData clusterSpawnData)
-   at DarkRift.Server.DarkRiftServer..ctor(ServerSpawnData spawnData)
-   at DarkRift.Server.Console.Program.Main(String[] args)
+   at %DarkRift.Server.Plugins.HealthCheck.HttpHealthCheck.Loaded(LoadedEventArgs args)
+   at %DarkRift.Server.ExtendedPluginManagerBase`1.Loaded()
+   at %DarkRift.Server.DarkRiftServer..ctor(ServerSpawnData spawnData, ClusterSpawnData clusterSpawnData)
+   at %DarkRift.Server.DarkRiftServer..ctor(ServerSpawnData spawnData)
+   at %DarkRift.Server.Console.Program.Main(String[] args)
 ```
 
 ## Description
-This exception is thrown when starting the server when another DarkRift server is already running. A common mistake is to change the port the network listener is running on in order to avoid port clashes across multiple DarkRift servers on the same machine, however DarkRift also has plugins that listen on additional ports to provide additional services such as the HTTP health check and the Prometheus metrics listener.
+This exception is thrown when starting the server when another %DarkRift server is already running. A common mistake is to change the port the network listener is running on in order to avoid port clashes across multiple %DarkRift servers on the same machine, however %DarkRift also has plugins that listen on additional ports to provide additional services such as the HTTP health check and the Prometheus metrics listener.
 
 The stack trace of the exception usually shows which plugin is unable to load.
 

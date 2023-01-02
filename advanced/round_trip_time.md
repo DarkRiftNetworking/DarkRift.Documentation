@@ -1,12 +1,12 @@
 # Round Trip Time
-Calculating the time it takes to send data between client and server is a critical part of many applications and is fundamental for all lag compensation code in games. DarkRift has some built in functionality for calculating the round trip time and ping between a client and the server.
+Calculating the time it takes to send data between client and server is a critical part of many applications and is fundamental for all lag compensation code in games. %DarkRift has some built in functionality for calculating the round trip time and ping between a client and the server.
 
 ## Introduction
 Round trip time is calculated by sending a 'ping' from host `A` to `B` and, on reception at `B`, returning an acknowledgment from `B` to `A`. By timing this interaction `A` can calculate the 'round trip time', and from that estimate the 'ping time' by halving it.
 
-To aid this DarkRift provides some additional fields in the `Message` type that allow a message to be sent as a 'ping' or 'ping acknowledgment' message. Furthermore, DarkRift will automatically time these messages and process the resulting times to smooth them.
+To aid this %DarkRift provides some additional fields in the `Message` type that allow a message to be sent as a 'ping' or 'ping acknowledgment' message. Furthermore, %DarkRift will automatically time these messages and process the resulting times to smooth them.
 
-It's important to note that DarkRift does not send these messages for you. Instead, any message can be converted to a ping message or ping acknowledgment so that you can use messages you already send to calculate the round trip time thus alleviating the need for additional messages to be sent just for this calculation.
+It's important to note that %DarkRift does not send these messages for you. Instead, any message can be converted to a ping message or ping acknowledgment so that you can use messages you already send to calculate the round trip time thus alleviating the need for additional messages to be sent just for this calculation.
 
 Good candidates for conversion to ping messages are request-response type messages (where the response is generated quickly and can be used as the ping acknowledgment message), and messages that are sent regularly and consistently such as those sent from the main update loops.
 

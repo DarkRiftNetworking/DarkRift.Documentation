@@ -5,7 +5,7 @@
 ```
 
 ## Description
-This warning is raised when DarkRift detects objects that should be recycled are being finalized (i.e. garbaged collected) when they shouldn't be. This usually has no functional impact on the application but can indicate an opportunity to improve performance.
+This warning is raised when %DarkRift detects objects that should be recycled are being finalized (i.e. garbaged collected) when they shouldn't be. This usually has no functional impact on the application but can indicate an opportunity to improve performance.
 
 The following snippet would cause this warning to be displayed:
 ```csharp
@@ -16,7 +16,7 @@ DarkRiftWriter writer = DarkRiftWriter.Create();
 
 ## Solutions
 ### Fix the Recycling Issue
-Fixing the root recycling issue is the best solution to fix this warning, however there is no easy way of finding which of the specific object usages are causing the warning to be displayed as DarkRift does not have this information to provide to you. You will need to search through all usages of the particular object with the issue manually.
+Fixing the root recycling issue is the best solution to fix this warning, however there is no easy way of finding which of the specific object usages are causing the warning to be displayed as %DarkRift does not have this information to provide to you. You will need to search through all usages of the particular object with the issue manually.
 
 To fix the snippet above, the writer should be wrapped in a `using` statement:
 ```csharp

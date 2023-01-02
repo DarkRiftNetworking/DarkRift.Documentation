@@ -3,7 +3,7 @@ Let’s eat. I feel like our strange circles floating around their empty abyss a
 
 For this I’m deliberately going to leave out simple code snippets since you should now have a good enough understanding to be able to add the easy bits yourself. If you’re struggling, go back and look through the previous chapters and the code you’ve already written and, if all else fails, look it up in the complete project.
 
-Add a new C# file to our server plugin called `AgarFoodManager` and make the class a DarkRift plugin (first challenge!). Make sure you set `ThreadSafe` to **false** so you don’t have problems later!
+Add a new C# file to our server plugin called `AgarFoodManager` and make the class a %DarkRift plugin (first challenge!). Make sure you set `ThreadSafe` to **false** so you don’t have problems later!
 
 Add a `HashSet` field called food that contains `FoodItem` objects and initialise it empty. Add the following definition of `FoodItem` to a new file:
 ```csharp
@@ -68,7 +68,7 @@ foreach (FoodItem food in foodManager.Food)
 ```
 It should be fairly easy to make out the **Pythagoras** in there. Essentially, we’re just checking the **distance** between the **food** and the **player** is less than the player’s **size** in a makeshift collision routine, we can then increase our player’s size appropriately and “eat” the food.
 
-This won’t compile yet because there’s three missing items; before we add them, let’s look at the `GetPluginsByType` call. Since DarkRift handles the instantiation of plugins you can’t get a reference to other plugins without querying DarkRift because DarkRift is the entity with that reference so that’s exactly what we do here.
+This won’t compile yet because there’s three missing items; before we add them, let’s look at the `GetPluginsByType` call. Since %DarkRift handles the instantiation of plugins you can’t get a reference to other plugins without querying %DarkRift because %DarkRift is the entity with that reference so that’s exactly what we do here.
 
 Hopefully you can see that the `Food` property and the `Eat` method need to be implemented in the `AgarFoodManager` class so add the following line:
 ```csharp

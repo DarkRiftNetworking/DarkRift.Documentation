@@ -1,5 +1,5 @@
 # Compatibility Bichannel Listener
-The `CompatibilityBichannelListener` (accessed by `AbstractBichannelListener`) in the `DarkRift.Server.Plugins.Listeners.Bichannel` namespace is a network listener that operates over TCP (for reliable traffic) and UDP (for unreliable traffic) concurrently using an older Socket API for compatibility primarily with older Unity versions.
+The `CompatibilityBichannelListener` (accessed by `AbstractBichannelListener`) in the `%DarkRift.Server.Plugins.Listeners.Bichannel` namespace is a network listener that operates over TCP (for reliable traffic) and UDP (for unreliable traffic) concurrently using an older Socket API for compatibility primarily with older Unity versions.
 
 ## Settings
 The following settings are exposed to configuration:

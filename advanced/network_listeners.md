@@ -1,5 +1,5 @@
 # Network Listeners
-Network Listeners are specialized plugins that provide the lowest level of networking to DarkRift. They are responsible for maintining connections, passing the data over the network, and implementing the different send modes available in DarkRift.
+Network Listeners are specialized plugins that provide the lowest level of networking to %DarkRift. They are responsible for maintining connections, passing the data over the network, and implementing the different send modes available in %DarkRift.
 
 The server is shipped with two network listeners and you've probably already used at least one. The first is the BichannelListener which sends reliable data via TCP and unreliable data via UDP. This is the default for the console based server. The second is a modification of the BichannelListener, the CompatibilityBichannelListener, that uses the same system but via a different .NET API to circumnavigate some bugs in hosts like Unity.
 
@@ -13,7 +13,7 @@ An example of a listener element, that would create a BichannelListener, would b
 </listener>
 ```
 ## Custom Network Listeners
-It is possible to create your own NetworkListeners in a very similar way to creating plugins. Instead of inheriting from Plugin you must inherit from NetworkListener. When a new client connects you should create an instance of a NetworkServerConnection which DarkRift will use to communicate with that client.
+It is possible to create your own NetworkListeners in a very similar way to creating plugins. Instead of inheriting from Plugin you must inherit from NetworkListener. When a new client connects you should create an instance of a NetworkServerConnection which %DarkRift will use to communicate with that client.
 
 **Note that it is assumed your NetworkListeners will be thread safe!**
 ```csharp

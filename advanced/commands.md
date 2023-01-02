@@ -30,4 +30,4 @@ There are no extra steps to adding the new commands to the `help` command since 
 
 And you should see the help strings you added earlier.
 
-Should you need to indicate to the user that a syntax error has occured then you should throw a CommandSyntaxException and DarkRift will show the user the usage text set in the command and any message you supply.
+Should you need to indicate to the user that a syntax error has occured then you should throw a CommandSyntaxException and %DarkRift will show the user the usage text set in the command and any message you supply.

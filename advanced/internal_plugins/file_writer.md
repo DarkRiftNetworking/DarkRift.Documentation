@@ -1,5 +1,5 @@
 # File Writer
-The `FileWriter` in the `DarkRift.Server.Plugins.LogWriters` namespace provides a log writer that writes to a file on disk.
+The `FileWriter` in the `%DarkRift.Server.Plugins.LogWriters` namespace provides a log writer that writes to a file on disk.
 
 ## Settings
 The following settings are exposed to configuration:

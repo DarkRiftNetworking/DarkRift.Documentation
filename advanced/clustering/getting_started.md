@@ -1,8 +1,8 @@
 # Getting Started
 To get started with server clustering you will need to setup a few things. This page will take you through the main steps to setting up your cluster.
 
-## `ServerRegistryConnector`
-The first step is to choose an appropriate `ServerRegistryConnector` for your cluster. This will be responsible for discovering servers within the cluster and passing that information to DarkRift.
+## ServerRegistryConnector
+The first step is to choose an appropriate `ServerRegistryConnector` for your cluster. This will be responsible for discovering servers within the cluster and passing that information to %DarkRift.
 
 At the time of writing the only official connector is for [Hashicorp Consul](https://www.consul.io/), and it can be downloaded [here](https://github.com/DarkRiftNetworking/consul-server-registry-connector). Other official connectors and also third party connectors may be available and may be more appropriate for your deployment.
 
@@ -17,10 +17,10 @@ The connector is like any other plugin and must be placed in one of the plugin s
 </serverRegistry>
 ```
 
-## `Cluster.config`
-In order for DarkRift to establish the correct network of connections you need to specify a `Cluster.config` file. This file is similar to the `Server.config` file but instead of describing the operation of a single server this file defines the groups in the cluster and how they are related to each other.
+## Cluster.config
+In order for %DarkRift to establish the correct network of connections you need to specify a `Cluster.config` file. This file is similar to the `Server.config` file but instead of describing the operation of a single server this file defines the groups in the cluster and how they are related to each other.
 
-Before writing this file it is important to have thoroughly considered your architecture. While it is easy to change the architecture in DarkRift it may not be so simple to change your own logic!
+Before writing this file it is important to have thoroughly considered your architecture. While it is easy to change the architecture in %DarkRift it may not be so simple to change your own logic!
 
 A simple `Cluster.config` file might look like this:
 ```xml

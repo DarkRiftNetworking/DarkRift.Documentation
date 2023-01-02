@@ -1,5 +1,5 @@
 # Console Writer
-The `ConsoleWriter` in the `DarkRift.Server.Plugins.LogWriters` namespace provides a log writer that writes to the console.
+The `ConsoleWriter` in the `%DarkRift.Server.Plugins.LogWriters` namespace provides a log writer that writes to the console.
 
 ## Settings
 The following settings are exposed to configuration:

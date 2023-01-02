@@ -1,5 +1,5 @@
 # Client Command
-The `ClientCommand` allows you to create mock clients on a server and is commonly used with the `message`/`mock` commands. This is mostly used for internal development of DarkRift.
+The `ClientCommand` allows you to create mock clients on a server and is commonly used with the `message`/`mock` commands. This is mostly used for internal development of %DarkRift.
 
 ## Commands
 The following commands are exposed:

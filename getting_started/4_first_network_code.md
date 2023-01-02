@@ -34,7 +34,7 @@ class Player
 ```
 I use **bytes** for the color because it means we have to store and send a lot **less data** than when using floats and it will serve the exact same purpose. Taking little steps like this can really improve bandwidth when you’re sending a message many times.
 
-To **spawn** players we need to tell DarkRift to inform us when a player connects. In the constructor of `AgarPlayerManager` add the line:
+To **spawn** players we need to tell %DarkRift to inform us when a player connects. In the constructor of `AgarPlayerManager` add the line:
 ```csharp
 ClientManager.ClientConnected += ClientConnected;
 ```
@@ -64,7 +64,7 @@ And at the top of the class add a `MAP_WIDTH` constant:
 ```csharp
 const float MAP_WIDTH = 20;
 ```
-You might notice the sneaky `e.Client.ID` hiding in there. So that we can address the player when it’s on the Unity side we need to have an **identifier**, since the client will only have one `Player` object they control it’s sufficient to just use the server's ID that gets allocated to the client by DarkRift when it connects.
+You might notice the sneaky `e.Client.ID` hiding in there. So that we can address the player when it’s on the Unity side we need to have an **identifier**, since the client will only have one `Player` object they control it’s sufficient to just use the server's ID that gets allocated to the client by %DarkRift when it connects.
 
 I’m using a value between 0 and 200 for each **colour** channel because if it’s too close to 255, 255, 255 we won’t be able to see the client against the **background**!
 
@@ -97,7 +97,7 @@ Finally, we get **all clients** currently **connected** to the **server** using 
 
 See? Easy! What were you worried about?
 
-In all seriousness though, that’s pretty much 80% of everything there is to sending messages in DarkRift, both client and server: create a **writer** for the **data**, a **message** to **wrap** the data and then **send**.
+In all seriousness though, that’s pretty much 80% of everything there is to sending messages in %DarkRift, both client and server: create a **writer** for the **data**, a **message** to **wrap** the data and then **send**.
 
 One thing I did gloss over, however, was the `SendMode`. This identifies how we should send the message to the client:
 - `Unreliable` – **No guarantees** will be made that the other device gets the message but it’s a lot **faster** to send. Use this for **frequent** data that will soon be out of date anyway (e.g. position/rotation updates).
@@ -144,14 +144,14 @@ And change the tag parameter in both of the `Message.Create` calls to: `Tags.Spa
 ## Actually Spawning Players
 Now that we’ve written the server code for spawning players let’s add the **client** side code. Create a new file called `PlayerSpawner` in the Unity project and add the following code:
 ```csharp
-using DarkRift.Client.Unity;
+using %DarkRift.Client.Unity;
 
 public class PlayerSpawner : MonoBehaviour
 {
     const byte SPAWN_TAG = 0;
 
     [SerializeField]
-    [Tooltip("The DarkRift client to communicate on.")]
+    [Tooltip("The %DarkRift client to communicate on.")]
     UnityClient client;
 
     [SerializeField]

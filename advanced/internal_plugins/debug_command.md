@@ -1,5 +1,5 @@
 # Debug Command
-The `DebugCommand` displays debug information about the DarkRift Server. This is mostly used for internal development of DarkRift.
+The `DebugCommand` displays debug information about the %DarkRift Server. This is mostly used for internal development of %DarkRift.
 
 ## Commands
 The following commands are exposed:

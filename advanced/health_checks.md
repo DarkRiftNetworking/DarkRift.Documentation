@@ -2,7 +2,7 @@
 Health checks provide an indication as to whether a server is working and is deemed 'healthy' by a system. They can be used to automatically restart failed services, ensure a certain deployment size or generally get state about an application.
 
 ## Health Checks in DarkRift
-While it is possible to test if a DarkRift server is ready for connections by connecting a TCP socket to its endpoint this creates state in DarkRift on some listeners and hence is not recommended. Instead you can use a HTTP health check and the `HttpHealthCheck` plugin.
+While it is possible to test if a %DarkRift server is ready for connections by connecting a TCP socket to its endpoint this creates state in %DarkRift on some listeners and hence is not recommended. Instead you can use a HTTP health check and the `HttpHealthCheck` plugin.
 
 If you have `loadBydefault` disabled for plugins in configuration, or wish to specify extra properties to the plugin you can explicitly declare it:
 ```xml

@@ -13,6 +13,9 @@ If you do have the source you can edit the `metadata/source` elements in the doc
 # Diagrams
 Diagrams are made using [diagrams.net](https://app.diagrams.net) and the XML save file should be version controlled in the directory the diagrams are used in with the the PNG exports saved in `/images`.
 
+## Source Code License
+Documentation is licensed under MIT [LICENSE.md](LICENSE.md). Source code is licensed under MPL 2.0, with some exceptions where MIT applies. See DarkRift's [LICENSE.md](https://github.com/DarkRiftNetworking/DarkRift/blob/master/LICENSE.md).
+
 # Contributions and Issues
 Contributions and issues are most welcome.
 
@@ -21,3 +24,6 @@ Any issues should be solely related to documentation however, issues related to 
 All contributions should be in well written english (we're not currently providing documentation in any other language), we might be quite strict about this in PRs so don't take it personally!
 
 And of course, any spelling/grammar fixes are actively encouraged!
+
+## Code of Conduct
+Be civil. DarkRift's [code of conduct](https://github.com/DarkRiftNetworking/DarkRift/blob/master/CONTRIBUTING.md) applies here too.

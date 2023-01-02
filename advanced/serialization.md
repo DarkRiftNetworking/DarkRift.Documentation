@@ -10,7 +10,7 @@ newPlayerWriter.Write(newPlayer.ColorR);
 newPlayerWriter.Write(newPlayer.ColorG);
 newPlayerWriter.Write(newPlayer.ColorB);
 ```
-It may be tempting to place this in a function to improve the maintainability, which wouldn't be wrong, but DarkRift already provides functionality for this. By enclosing the data to send in an object that implement the IDarkRiftSerializable interface, the serialization code can be easily associated to the object and DarkRift can also handle its serialization and deserialization for you.
+It may be tempting to place this in a function to improve the maintainability, which wouldn't be wrong, but %DarkRift already provides functionality for this. By enclosing the data to send in an object that implement the IDarkRiftSerializable interface, the serialization code can be easily associated to the object and %DarkRift can also handle its serialization and deserialization for you.
 
 ```csharp
 class Player
@@ -48,9 +48,9 @@ class Player
     }
 }
 ```
-When we ask DarkRift to serialise our Player object here, it will then pass a writer to our `Serialize` method which will dump our object’s contents. When we deserialize, we will ask DarkRift to read our object and DarkRift will create a new object using the blank constructor we just defined and will then call our `Deserialize` method which will extract the object from the reader. It is also possible to pass DarkRift an object to overwrite on deserialization to reduce garbage generation, in which case the blank constructor is not needed.
+When we ask %DarkRift to serialise our Player object here, it will then pass a writer to our `Serialize` method which will dump our object’s contents. When we deserialize, we will ask %DarkRift to read our object and %DarkRift will create a new object using the blank constructor we just defined and will then call our `Deserialize` method which will extract the object from the reader. It is also possible to pass %DarkRift an object to overwrite on deserialization to reduce garbage generation, in which case the blank constructor is not needed.
 
-Note that the reader/writer objects used here are not wrapped in a `using` statement, DarkRift handles the lifetime of the reader/writer for you.
+Note that the reader/writer objects used here are not wrapped in a `using` statement, %DarkRift handles the lifetime of the reader/writer for you.
 
 To serialize our `IDarkRiftSerializable` object we can now pass it straight into the message constructor:
 ```csharp
