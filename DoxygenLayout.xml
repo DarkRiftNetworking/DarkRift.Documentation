@@ -14,56 +14,77 @@
 	  <tab type="user" url="@ref md_getting_started_9_omnomnomnom" title="Omnomnomnom"/>
 	  <tab type="user" url="@ref md_getting_started_10_implementing_cannibalism" title="Implementing Cannibalism"/>
 	</tab>
-	<tab type="usergroup" url="@ref md_advanced_architecture" title="Advanced">
-      <tab type="user" url="@ref md_advanced_architecture" title="Architecture"/>
-	  <tab type="user" url="@ref md_advanced_debugging" title="Debugging"/>
-	  <tab type="user" url="@ref md_advanced_logging" title="Logging"/>
-	  <tab type="user" url="@ref md_advanced_message_and_mock" title="Message and Mock"/>
-	  <tab type="user" url="@ref md_advanced_managing_plugins" title="Managing Plugins"/>
-	  <tab type="user" url="@ref md_advanced_the_strike_system" title="The Strike System"/>
-	  <tab type="user" url="@ref md_advanced_serialization" title="Serialization"/>
-	  <tab type="user" url="@ref md_advanced_commands" title="Commands"/>
-	  <tab type="user" url="@ref md_advanced_installs_and_upgrades" title="Installs and Upgrades"/>
-	  <tab type="user" url="@ref md_advanced_plugin_loading" title="Plugin Loading"/>
-	  <tab type="user" url="@ref md_advanced_recycling" title="Recycling"/>
-	  <tab type="user" url="@ref md_advanced_the_dispatcher" title="Dispatcher"/>
-	  <tab type="user" url="@ref md_advanced_hosting_a_server" title="Hosting a Server"/>
-	  <tab type="user" url="@ref md_advanced_configuration_variables" title="Configuration Variables"/>
-	  <tab type="user" url="@ref md_advanced_health_checks" title="Health Checks"/>
+	<tab type="usergroup" url="@ref md_advanced_key_topics_architecture" title="User Guide">
+	  <tab type="usergroup" url="@ref md_advanced_key_topics_architecture" title="Key Topics">
+		<tab type="user" url="@ref md_advanced_key_topics_architecture" title="Architecture"/>
+		<tab type="user" url="@ref md_advanced_key_topics_serialization" title="Serialization"/>
+		<tab type="user" url="@ref md_advanced_key_topics_network_listeners" title="Network Listeners"/>
+		<tab type="user" url="@ref md_advanced_key_topics_round_trip_time" title="Round Trip Time"/>
+	  </tab>
+	  
+	  <tab type="usergroup" url="@ref md_advanced_hosting_embedding_a_server" title="Hosting">
+		<tab type="user" url="@ref md_advanced_hosting_embedding_a_server" title="Embedding a Server"/>
+		<tab type="user" url="@ref md_advanced_hosting_unity_based_servers" title="Unity Based Servers"/>
+		<tab type="user" url="@ref md_advanced_hosting_dotnet_compatibility" title=".NET Compatibility"/>
+	  </tab>
+	  
+	  <tab type="usergroup" url="@ref md_advanced_debugging_debugging" title="Debugging">
+		<tab type="user" url="@ref md_advanced_debugging_debugging" title="Debugging"/>
+		<tab type="user" url="@ref md_advanced_debugging_logging" title="Logging"/>
+		<tab type="user" url="@ref md_advanced_debugging_message_and_mock" title="Message and Mock"/>
+	  </tab>
+	  
+	  <tab type="usergroup" url="@ref md_advanced_plugin_system_managing_plugins" title="Plugin System">
+		<tab type="user" url="@ref md_advanced_plugin_system_managing_plugins" title="Managing Plugins"/>
+		<tab type="user" url="@ref md_advanced_plugin_system_installs_and_upgrades" title="Installs and Upgrades"/>
+		<tab type="user" url="@ref md_advanced_plugin_system_plugin_loading" title="Plugin Loading"/>
+		<tab type="user" url="@ref md_advanced_plugin_system_commands" title="Commands"/>
+		
+		<tab type="usergroup" url="@ref md_advanced_plugin_system_internal_plugins_index" title="Internal Plugins">
+			<tab type="user" url="@ref md_advanced_plugin_system_internal_plugins_bad_word_filter" title="Bad Word Filter"/>
+			<tab type="user" url="@ref md_advanced_plugin_system_internal_plugins_bichannel_listener" title="Bichannel Listener"/>
+			<tab type="user" url="@ref md_advanced_plugin_system_internal_plugins_clear_command" title="Clear Command"/>
+			<tab type="user" url="@ref md_advanced_plugin_system_internal_plugins_compatibility_bichannel_listener" title="Compatibility Bichannel Listener"/>
+			<tab type="user" url="@ref md_advanced_plugin_system_internal_plugins_console_writer" title="Console Writer"/>
+			<tab type="user" url="@ref md_advanced_plugin_system_internal_plugins_debug_command" title="Debug Command"/>
+			<tab type="user" url="@ref md_advanced_plugin_system_internal_plugins_debug_writer" title="Debug Writer"/>
+			<tab type="user" url="@ref md_advanced_plugin_system_internal_plugins_demo_command" title="Demo Command"/>
+			<tab type="user" url="@ref md_advanced_plugin_system_internal_plugins_file_writer" title="File Writer"/>
+			<tab type="user" url="@ref md_advanced_plugin_system_internal_plugins_help_command" title="Help Command"/>
+			<tab type="user" url="@ref md_advanced_plugin_system_internal_plugins_http_health_check" title="HTTP Health Check"/>
+			<tab type="user" url="@ref md_advanced_plugin_system_internal_plugins_message_command" title="Message Command"/>
+			<tab type="user" url="@ref md_advanced_plugin_system_internal_plugins_mock_command" title="Mock Command"/>
+			<tab type="user" url="@ref md_advanced_plugin_system_internal_plugins_object_cache_monitor" title="Object Cache Monitor"/>
+			<tab type="user" url="@ref md_advanced_plugin_system_internal_plugins_plugin_controller" title="Plugin Controller"/>
+			<tab type="user" url="@ref md_advanced_plugin_system_internal_plugins_prometheus_endpoint" title="Prometheus Endpoint"/>
+			<tab type="user" url="@ref md_advanced_plugin_system_internal_plugins_sniffer" title="Sniffer"/>
+		</tab>
+	  </tab>
+	  
+	  <tab type="usergroup" url="@ref md_advanced_configuration_configuration_variables" title="Configuration">
+		<tab type="user" url="@ref md_advanced_configuration_configuration_variables" title="Configuration Variables"/>
+		<tab type="user" url="@ref md_advanced_configuration_the_strike_system" title="The Strike System"/>
+		<tab type="user" url="@ref md_advanced_configuration_health_checks" title="Health Checks"/>
+	  </tab>
+	  
+	  <tab type="usergroup" url="@ref md_advanced_optimization_recycling" title="Optimization">
+		<tab type="user" url="@ref md_advanced_optimization_recycling" title="Recycling"/>
+		<tab type="user" url="@ref md_advanced_optimization_the_dispatcher" title="Dispatcher"/>
+	  </tab>
+	  
 	  <tab type="usergroup" url="@ref md_advanced_metrics_using_the_metrics_system" title="Metrics">
 		<tab type="user" url="@ref md_advanced_metrics_using_the_metrics_system" title="Using The Metrics System"/>
 		<tab type="user" url="@ref md_advanced_metrics_setting_up_prometheus_metrics" title="Setting Up Prometheus Metrics"/>
 		<tab type="user" url="@ref md_advanced_metrics_writing_custom_metrics_writers" title="Writing CustomMetric Writers"/>
 	  </tab>
-	  <tab type="user" url="@ref md_advanced_unity_based_servers" title="Unity Based Servers"/>
+	  
 	  <tab type="user" url="@ref md_advanced_matchmaking" title="Matchmaking"/>
-	  <tab type="user" url="@ref md_advanced_network_listeners" title="Network Listeners"/>
-	  <tab type="user" url="@ref md_advanced_round_trip_time" title="Round Trip Time"/>
+	  
 	  <tab type="usergroup" url="@ref md_advanced_clustering_getting_started" title="Clustering">
 		<tab type="user" url="@ref md_advanced_clustering_getting_started" title="Getting Started"/>
 		<tab type="user" url="@ref md_advanced_clustering_server_clustering_api_overview" title="Server Clustering API Overview"/>
 		<tab type="user" url="@ref md_advanced_clustering_server_registry_connectors" title="Writing Server Registry Connectors"/>
 	  </tab>
-	  <tab type="usergroup" url="@ref md_advanced_internal_plugins_index" title="Internal Plugins">
-		<tab type="user" url="@ref md_advanced_internal_plugins_bad_word_filter" title="Bad Word Filter"/>
-		<tab type="user" url="@ref md_advanced_internal_plugins_bichannel_listener" title="Bichannel Listener"/>
-		<tab type="user" url="@ref md_advanced_internal_plugins_clear_command" title="Clear Command"/>
-		<tab type="user" url="@ref md_advanced_internal_plugins_compatibility_bichannel_listener" title="Compatibility Bichannel Listener"/>
-		<tab type="user" url="@ref md_advanced_internal_plugins_console_writer" title="Console Writer"/>
-		<tab type="user" url="@ref md_advanced_internal_plugins_debug_command" title="Debug Command"/>
-		<tab type="user" url="@ref md_advanced_internal_plugins_debug_writer" title="Debug Writer"/>
-		<tab type="user" url="@ref md_advanced_internal_plugins_demo_command" title="Demo Command"/>
-		<tab type="user" url="@ref md_advanced_internal_plugins_file_writer" title="File Writer"/>
-		<tab type="user" url="@ref md_advanced_internal_plugins_help_command" title="Help Command"/>
-		<tab type="user" url="@ref md_advanced_internal_plugins_http_health_check" title="HTTP Health Check"/>
-		<tab type="user" url="@ref md_advanced_internal_plugins_message_command" title="Message Command"/>
-		<tab type="user" url="@ref md_advanced_internal_plugins_mock_command" title="Mock Command"/>
-		<tab type="user" url="@ref md_advanced_internal_plugins_object_cache_monitor" title="Object Cache Monitor"/>
-		<tab type="user" url="@ref md_advanced_internal_plugins_plugin_controller" title="Plugin Controller"/>
-		<tab type="user" url="@ref md_advanced_internal_plugins_prometheus_endpoint" title="Prometheus Endpoint"/>
-		<tab type="user" url="@ref md_advanced_internal_plugins_sniffer" title="Sniffer"/>
-	  </tab>
-	  <tab type="user" url="@ref md_advanced_dotnet_compatibility" title=".NET Compatibility"/>
     </tab>
 	<tab type="classes" visible="yes" title="Code Reference">
       <tab type="classlist" visible="yes" title="" intro=""/>
@@ -72,7 +93,6 @@
       <tab type="classmembers" visible="yes" title="" intro=""/>
     </tab>
 	<tab type="user" visible="yes" url="https://www.darkriftnetworking.com/DarkRift2/Docs/2.10.0/configuration/index.html"  title="Configuration"/>
-	<tab type="user" visible="yes" url="https://github.com/DarkRiftNetworking/DarkRift/wiki"  title="Wiki"/>
 	<tab type="user" visible="yes" url="https://discord.gg/bgKb7PG8Fh"  title="Discord"/>
     <tab type="pages" visible="no" title="Page Index" intro=""/>
     <tab type="modules" visible="yes" title="" intro=""/>
