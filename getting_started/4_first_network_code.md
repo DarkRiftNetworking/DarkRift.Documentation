@@ -144,7 +144,7 @@ And change the tag parameter in both of the `Message.Create` calls to: `Tags.Spa
 ## Actually Spawning Players
 Now that we’ve written the server code for spawning players let’s add the **client** side code. Create a new file called `PlayerSpawner` in the Unity project and add the following code:
 ```csharp
-using %DarkRift.Client.Unity;
+using DarkRift.Client.Unity;
 
 public class PlayerSpawner : MonoBehaviour
 {

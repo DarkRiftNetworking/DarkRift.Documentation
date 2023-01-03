@@ -2,8 +2,8 @@
 ## Sending Our Position
 In the Unity project create a new C# script called `Player`, this is going to **send** our **position** to the server every time we **move**. Add the following code to it:
 ```csharp
-using %DarkRift.Client;
-using %DarkRift.Client.Unity;
+using DarkRift.Client;
+using DarkRift.Client.Unity;
 
 public class Player : MonoBehaviour
 {
@@ -112,8 +112,8 @@ Once again, the first few lines of this should look familiar. The **writer** her
 ## Updating the Client Position
 To **handle movement** on the game we’re going to move all clients with a single manager. Create a new C# script in your Unity project called `NetworkPlayerManager` and add the following:
 ```csharp
-using %DarkRift.Client;
-using %DarkRift.Client.Unity;
+using DarkRift.Client;
+using DarkRift.Client.Unity;
 
 public class NetworkPlayerManager : MonoBehaviour
 {
