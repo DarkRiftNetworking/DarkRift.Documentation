@@ -1,8 +1,0 @@
-- name: <groups>
-  href: groups.md
-  items:
-    - name: <group>
-      href: group.md
-      items:
-      - name: <connectsTo>
-        href: connectsTo.md
