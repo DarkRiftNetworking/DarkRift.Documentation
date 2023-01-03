@@ -1,5 +1,8 @@
-# Advanced Serialization
-Manual serialization of large objects can leave a significant amount of repeated code like:
+# Serialization
+
+%DarkRift at its core is really just a way to pass messages (containing your game/application data) from one machine to another. To do that you need to be able to create (write) and interpret (read) such messages.
+
+The most simple way to do serialization is to take a DarkRift.DarkRiftWriter and write some data. However, serialization of your objects can leave a significant amount of repeated code like:
 ```csharp
 DarkRiftWriter newPlayerWriter = DarkRiftWriter.Create();
 newPlayerWriter.Write(newPlayer.ID);
