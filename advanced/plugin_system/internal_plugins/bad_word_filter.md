@@ -1,5 +1,5 @@
 # Bad Word Filter
-The `BadWordFilter` (accessed through `IBadWordFilter`) in the `%DarkRift.Server.Plugins.Chat` namespace provides a chat filtering utility in DR Pro.
+The `BadWordFilter` (accessed through `IBadWordFilter`) in the `%DarkRift.Server.Plugins.Chat` namespace provides a chat filtering utility.
 
 ## Settings
 The following settings are exposed to configuration:

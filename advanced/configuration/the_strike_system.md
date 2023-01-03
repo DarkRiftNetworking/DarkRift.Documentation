@@ -1,5 +1,5 @@
 # The Strike System
-Since there are a few things %DarkRift can detect that might indicate a hacked or malicious client (e.g. malformed packets, corrupt headers), %DarkRift has a built-in system for tracking warnings that Pro users have access to. This guide will show you some of the ways you can inteface with it.
+Since there are a few things %DarkRift can detect that might indicate a hacked or malicious client (e.g. malformed packets, corrupt headers), %DarkRift has a built-in system for tracking warnings. This guide will show you some of the ways you can inteface with it.
 
 ## Adding Strikes
 Firstly, if the client performs an action or does something you would deem as cheating you can add a strike to their record in %DarkRift. If the client accumulates too many strikes then %DarkRift will automatically kick them from the server and inform you.

@@ -1,8 +1,6 @@
 # Matchmaking
 %DarkRift Networking includes a matchmaker plugin for games where players need to be grouped into 'rooms' according to certain metrics. This page will guide you through using the matchmaker.
 
-Note, the matchmaker is only included with the Pro version.
-
 ## Matchmaker Setup
 The %DarkRift matchmaker is implemented as an abstract plugin in the %DarkRift.Server.Plugins.Matchmaking namespace. This means to use it you must inherit from it to provide it some basic implementation details including a ranking function and a type parameter.
 

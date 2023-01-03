@@ -13,7 +13,7 @@ newPlayerWriter.Write(newPlayer.ColorR);
 newPlayerWriter.Write(newPlayer.ColorG);
 newPlayerWriter.Write(newPlayer.ColorB);
 ```
-It may be tempting to place this in a function to improve the maintainability, which wouldn't be wrong, but %DarkRift already provides functionality for this. By enclosing the data to send in an object that implement the IDarkRiftSerializable interface, the serialization code can be easily associated to the object and %DarkRift can also handle its serialization and deserialization for you.
+It may be tempting to place this in a function to improve the maintainability, which wouldn't be wrong, but %DarkRift already provides functionality for this. By enclosing the data to send in an object that implement the DarkRift.IDarkRiftSerializable interface, the serialization code can be easily associated to the object and %DarkRift can also handle its serialization and deserialization for you.
 
 ```csharp
 class Player
@@ -55,7 +55,7 @@ When we ask %DarkRift to serialise our Player object here, it will then pass a w
 
 Note that the reader/writer objects used here are not wrapped in a `using` statement, %DarkRift handles the lifetime of the reader/writer for you.
 
-To serialize our `IDarkRiftSerializable` object we can now pass it straight into the message constructor:
+To serialize our DarkRift.IDarkRiftSerializable object we can now pass it straight into the message constructor:
 ```csharp
 Player player = new Player();
 
@@ -63,7 +63,7 @@ Player player = new Player();
 
 Message playerMessage = Message.Create(SPAWN_TAG, player);
 ```
-It is also possible to serialize the `IDarkRiftSerializable` into a `DarkRiftWriter` to which more data can also be added around it:
+It is also possible to serialize the DarkRift.IDarkRiftSerializable into a DarkRift.DarkRiftWriter to which more data can also be added around it:
 ```csharp
 using(DarkRiftWriter writer = new DarkRiftWriter())
 {

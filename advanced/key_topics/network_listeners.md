@@ -1,5 +1,5 @@
 # Network Listeners
-Network Listeners are specialized plugins that provide the lowest level of networking to %DarkRift. They are responsible for maintining connections, passing the data over the network, and implementing the different send modes available in %DarkRift.
+Network Listeners are specialized plugins that provide the lowest level of networking to %DarkRift. They are responsible for maintaining connections, passing the data over the network, and implementing the different send modes available in %DarkRift.
 
 The server is shipped with two network listeners and you've probably already used at least one. The first is the BichannelListener which sends reliable data via TCP and unreliable data via UDP. This is the default for the console based server. The second is a modification of the BichannelListener, the CompatibilityBichannelListener, that uses the same system but via a different .NET API to circumnavigate some bugs in hosts like Unity.
 

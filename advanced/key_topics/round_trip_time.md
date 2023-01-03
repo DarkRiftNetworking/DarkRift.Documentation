@@ -6,7 +6,7 @@ Round trip time is calculated by sending a 'ping' from host `A` to `B` and, on r
 
 To aid this %DarkRift provides some additional fields in the `Message` type that allow a message to be sent as a 'ping' or 'ping acknowledgment' message. Furthermore, %DarkRift will automatically time these messages and process the resulting times to smooth them.
 
-It's important to note that %DarkRift does not send these messages for you. Instead, any message can be converted to a ping message or ping acknowledgment so that you can use messages you already send to calculate the round trip time thus alleviating the need for additional messages to be sent just for this calculation.
+**It's important to note that %DarkRift does not send these messages for you**. Instead, any message can be converted to a ping message or ping acknowledgment so that you can use messages you already send to calculate the round trip time thus alleviating the need for additional messages to be sent just for this calculation.
 
 Good candidates for conversion to ping messages are request-response type messages (where the response is generated quickly and can be used as the ping acknowledgment message), and messages that are sent regularly and consistently such as those sent from the main update loops.
 
@@ -48,7 +48,7 @@ using (Message receivedMessage = args.GetMessage())
 When the ping acknowledgement is received the timer will be stopped and the round trip time recorded automatically.
 
 ## Using the Round Trip Time
-Both `IClient` and `DarkRiftClient` have an `RoundTripTime` property which contains both the `LatestRtt` and a `SmoothedRtt` which is a moving average of the most recent round trip times. The `SmoothedRtt` should be used if you want to reduce the weight of anomalous results at the cost of a slight delay.
+Both DarkRift.Server.IClient and DarkRift.Client.DarkRiftClient have an `RoundTripTime` property which contains both the `LatestRtt` and a `SmoothedRtt` which is a moving average of the most recent round trip times. The `SmoothedRtt` should be used if you want to reduce the weight of anomalous results at the cost of a slight delay.
 
 ```csharp
 Logger.Info($"Latest RTT was {client.RoundTripTime.Rtt} and the smoothed RTT was {client.RoundTripTime.SmoothedRtt} over {client.RoundTripTime.RttSampleCount} samples.");

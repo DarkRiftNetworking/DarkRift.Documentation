@@ -35,11 +35,11 @@ Consider a simple open world game where players can wander across a single large
 
 The communication lanes in this example are fairly simple: players connect to **client servers** which must be able to talk to all **world servers** to move players across the map and must be able to talk to all chat servers to ensure players can send messages to any other player.
 
-![Architecture Diagram](~/images/advanced/clustering/example_architecture.png "Example Architecture")
+![Architecture Diagram](https://www.darkriftnetworking.com/DarkRift2/Docs/2.10.0/images/advanced/clustering/example_architecture.png "Example Architecture")
 
 It should be easy to think about the servers within these groups and how they interact. If we explode the diagram to contain 3 players, 2 client servers, 3 world servers and 1 social server you can see how they could interact.
 
-![Exploded Architecture Diagram](~/images/advanced/clustering/example_architecture_exploded.png "Example Exploded Architecture")
+![Exploded Architecture Diagram](https://www.darkriftnetworking.com/DarkRift2/Docs/2.10.0/images/advanced/clustering/example_architecture_exploded.png "Example Exploded Architecture")
 
 If players 1 & 2 are in the same region of the map their communication would be routed to the same world server and they would be able to interact despite being on different client servers. If they were in different regions, and hence connected to different world servers, the players could still send messages to each other via the social server.
 

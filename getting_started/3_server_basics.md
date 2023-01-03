@@ -4,14 +4,11 @@ Before we jump into the art of %DarkRift we should explore how %DarkRift operate
 
 %DarkRift uses **plugins** to implement all server side logic, you write plugins as you would develop a standard .NET library and then you just drop the generated DLL into %DarkRift’s ‘Plugins’ directory. %DarkRift offers a large API for managing clients and sending messages etc. and provides events that inform your plugins when a client connects, sends a message etc.
 
-![Architecture Diagram](~/images/getting_started/architecture.png "%DarkRift's Architecture")
+![Architecture Diagram](https://www.darkriftnetworking.com/DarkRift2/Docs/2.10.0/images/getting_started/architecture.png "DarkRift's Architecture")
 
 Everything related to the **server** code is in the namespace `%DarkRift.Server`, everything to do with the **client** in `%DarkRift.Client` and everything used in **both** is just in `%DarkRift`.
 ## Setting up the Plugin
 Create a new `Class Library C# project` in Visual Studio named something like “AgarPlugin” and add **references** to `%DarkRift.Server.dll` and `%DarkRift.dll`.
-
-> [!WARNING]
-> If you are using the Free version of %DarkRift you will need to create a .NET Framework plugin, only the .NET Core build of the Pro version of %DarkRift supports .NET Core/Standard plugins.
 
 **Rename** the default class to `AgarPlayerManager` and rename the file similarly. Add using directives to the top of the file (`using %DarkRift;` and `using %DarkRift.Server;`) so that we have access to both `%DarkRift.Server` and `%DarkRift` **namespaces**.
 
