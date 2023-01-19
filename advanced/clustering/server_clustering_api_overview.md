@@ -10,13 +10,13 @@ The following code is written from the perspective of a plugin.
 
 ### Accessing Servers
 In most cases you will access servers by knowing what group they're in.
-```c#
+```csharp
 IServerGroup serverGroup = RemoteServerManager.GetGroup(groupName);
 IRemoteServer[] remoteServers = serverGroup.GetAllRemoteServers();
 ```
 
 If the ID of a server is known then it can be accessed by performing a search of all groups.
-```c#
+```csharp
 IRemoteServer remoteServer = RemoteServerManager.FindServer(id);
 ```
 
@@ -25,7 +25,7 @@ The `IServerGroup` interface represents a single server group and provides metho
 
 ### Using Events
 You can subscribe to join an leave events which are triggered when the registry informs the server about the new/leaving remote server.
-```c#
+```csharp
 serverGroup.ServerJoined += ServerJoined;
 serverGroup.ServerLeft += ServerLeft;
 
@@ -42,7 +42,7 @@ void ServerLeft(object sender, ServerLeftEventArgs args)
 
 ### Accessing Servers
 To get all remote servers in a group the following code can be used.
-```c#
+```csharp
 IRemoteServer[] remoteServers = serverGroup.GetAllRemoteServers();
 ```
 
@@ -53,7 +53,7 @@ Note, that an instance of `IRemoteServer` is not always connected to the remote 
 
 ### Sending messages
 Sending messages is done in much the same way you would send to a client.
-```c#
+```csharp
 using (DarkRiftWriter writer = DarkRiftWriter.Create())
 {
     writer.Write(someData);
@@ -67,7 +67,7 @@ using (DarkRiftWriter writer = DarkRiftWriter.Create())
 
 ### Receiving Messages
 Similarly receiving messages is fairly similar to receiving from a client.
-```c#
+```csharp
 remoteServer.MessageRecevied += MessageRecevied;
 
 void MessageReceived(object sender, ServerMessageReceivedEventArgs e)

@@ -1,17 +1,17 @@
 # Clustering
-Clustering in DarkRift refers to running multiple DarkRift servers together in groups to horizontally scale and develop more modular architectures.
+Clustering in %DarkRift refers to running multiple %DarkRift servers together in groups to horizontally scale and develop more modular architectures.
 
 ## Background
-Traditionally, DarkRift has been primarily scaled vertically, by adding more CPU and memory resources to a single server, and optimization has largely been to make more efficient use of this resource. However, Most architectures require some form of horizontal scaling for both performance and resiliency.
+Traditionally, %DarkRift has been primarily scaled vertically, by adding more CPU and memory resources to a single server, and optimization has largely been to make more efficient use of this resource. However, Most architectures require some form of horizontal scaling for both performance and resiliency.
 
-It has always been possible to horizontally scale DarkRift servers with some manually work, most notably by using `DarkRiftClient` objects inside a plugin to connect to another 'upstream' server and usually forming a tree like architecture where servers can communicate to each other via their upstream. Similarly, segregating clients into different servers such that each server operates as a conceptual 'room' for clients is another common (and simpler) method of horizontal scaling.
+It has always been possible to horizontally scale %DarkRift servers with some manually work, most notably by using `DarkRiftClient` objects inside a plugin to connect to another 'upstream' server and usually forming a tree like architecture where servers can communicate to each other via their upstream. Similarly, segregating clients into different servers such that each server operates as a conceptual 'room' for clients is another common (and simpler) method of horizontal scaling.
 
-DarkRift's clustering takes the first idea and builds on it to improve ease of use, but of course the latter idea is still achievable using DarkRift's clustering.
+%DarkRift's clustering takes the first idea and builds on it to improve ease of use, but of course the latter idea is still achievable using %DarkRift's clustering.
 
 ## Concepts
-Clustering brings a few new concepts to DarkRift servers and the terminology explained here is important to understand.
+Clustering brings a few new concepts to %DarkRift servers and the terminology explained here is important to understand.
 
-When talking about a `server` we are referring to a single instance of a DarkRift application, i.e. a single process with plugins/logic. Two new concepts introduced with clustering are a `group`, which is considered to be a collection of at least one DarkRift server with the same plugins/logic (and purpose) as others in the group, and a `system` which is a collection of groups that are interconnected, communicate and operate together as an architecture.
+When talking about a `server` we are referring to a single instance of a %DarkRift application, i.e. a single process with plugins/logic. Two new concepts introduced with clustering are a `group`, which is considered to be a collection of at least one %DarkRift server with the same plugins/logic (and purpose) as others in the group, and a `system` which is a collection of groups that are interconnected, communicate and operate together as an architecture.
 
 When describing the system from within a server (e.g. in the .NET API) a `remote server` refers to another server in the system as a clarification. In this context, a 'server' refers to the server that code is currently being run on and 'remote server' refers to another server in the system. The same logic applies for a `remote group`.
 
@@ -22,7 +22,7 @@ A `ServerRegistryConnector` is a new type of plugin that handles the discovery o
 An `external` server group is one in which `DarkRiftClient` objects can connect to while an `internal` server group is one other servers can connect to. A group cannot be both internally and externally visible.
 
 ## Architecture
-DarkRift systems are composed of server groups which are composed of individual servers. When designing a DarkRift system you should primarily think about the different groups of servers; each group should have a well defined purpose and well defined connections to other groups.
+%DarkRift systems are composed of server groups which are composed of individual servers. When designing a %DarkRift system you should primarily think about the different groups of servers; each group should have a well defined purpose and well defined connections to other groups.
 
 Each server in a group should be identical so that the number of servers in each group can be scaled up or down without side effects on the system. Servers within a group cannot talk to other servers in the same group so if communication within a group is required it should be routed via another server group.
 
@@ -35,11 +35,11 @@ Consider a simple open world game where players can wander across a single large
 
 The communication lanes in this example are fairly simple: players connect to **client servers** which must be able to talk to all **world servers** to move players across the map and must be able to talk to all chat servers to ensure players can send messages to any other player.
 
-![Architecture Diagram](~/images/advanced/clustering/example_architecture.png "Example Architecture")
+![Architecture Diagram](https://www.darkriftnetworking.com/DarkRift2/Docs/2.10.0/images/advanced/clustering/example_architecture.png "Example Architecture")
 
 It should be easy to think about the servers within these groups and how they interact. If we explode the diagram to contain 3 players, 2 client servers, 3 world servers and 1 social server you can see how they could interact.
 
-![Exploded Architecture Diagram](~/images/advanced/clustering/example_architecture_exploded.png "Example Exploded Architecture")
+![Exploded Architecture Diagram](https://www.darkriftnetworking.com/DarkRift2/Docs/2.10.0/images/advanced/clustering/example_architecture_exploded.png "Example Exploded Architecture")
 
 If players 1 & 2 are in the same region of the map their communication would be routed to the same world server and they would be able to interact despite being on different client servers. If they were in different regions, and hence connected to different world servers, the players could still send messages to each other via the social server.
 

@@ -1,8 +1,8 @@
 # The sniffer
-Let’s take some time out from the coding to look at one of DarkRift’s most powerful **debugging** features.
+Let’s take some time out from the coding to look at one of %DarkRift’s most powerful **debugging** features.
     
 ## Sniffing Data
-Currently DarkRift is just sitting there, occasionally telling you when someone connects or disconnects, what if I want to know if it actually receives a message I send?
+Currently %DarkRift is just sitting there, occasionally telling you when someone connects or disconnects, what if I want to know if it actually receives a message I send?
 
 **Restart** your **server** and type into it `sniffer add -a`.
 
@@ -24,4 +24,4 @@ Additionally, you can specify the `-h` flag to see that data output in **hexadec
 
 Have a play with it in some of the example scenes; you probably won’t be able to have quite as much fun with it in our tutorial game since we only ever send one tag from the clients!
 
-For those of you who knew the original system in DarkRift 1 hopefully you’ll appreciate how much better this is!
+For those of you who knew the original system in %DarkRift 1 hopefully you’ll appreciate how much better this is!

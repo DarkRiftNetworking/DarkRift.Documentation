@@ -63,4 +63,4 @@ public void DestroyPlayer(ushort id)
 ```
 You can also remove some of the checks from the `SpawnPlayer` routine.
 
-Hopefully you’re now getting the hang of it and feel you can implement new features on your own. Once you know where things are in DarkRift it’s pretty much just the same principles replayed over!
+Hopefully you’re now getting the hang of it and feel you can implement new features on your own. Once you know where things are in %DarkRift it’s pretty much just the same principles replayed over!

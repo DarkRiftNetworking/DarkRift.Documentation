@@ -1,21 +1,18 @@
 # Server Basics
 ## A Brief Overview
-Before we jump into the art of DarkRift we should explore how DarkRift operates.
+Before we jump into the art of %DarkRift we should explore how %DarkRift operates.
 
-DarkRift uses **plugins** to implement all server side logic, you write plugins as you would develop a standard .NET library and then you just drop the generated DLL into DarkRift’s ‘Plugins’ directory. DarkRift offers a large API for managing clients and sending messages etc. and provides events that inform your plugins when a client connects, sends a message etc.
+%DarkRift uses **plugins** to implement all server side logic, you write plugins as you would develop a standard .NET library and then you just drop the generated DLL into %DarkRift’s ‘Plugins’ directory. %DarkRift offers a large API for managing clients and sending messages etc. and provides events that inform your plugins when a client connects, sends a message etc.
 
-![Architecture Diagram](~/images/getting_started/architecture.png "DarkRift's Architecture")
+![Architecture Diagram](https://www.darkriftnetworking.com/DarkRift2/Docs/2.10.0/images/getting_started/architecture.png "DarkRift's Architecture")
 
-Everything related to the **server** code is in the namespace `DarkRift.Server`, everything to do with the **client** in `DarkRift.Client` and everything used in **both** is just in `DarkRift`.
+Everything related to the **server** code is in the namespace `%DarkRift.Server`, everything to do with the **client** in `%DarkRift.Client` and everything used in **both** is just in `%DarkRift`.
 ## Setting up the Plugin
-Create a new `Class Library C# project` in Visual Studio named something like “AgarPlugin” and add **references** to `DarkRift.Server.dll` and `DarkRift.dll`.
+Create a new `Class Library C# project` in Visual Studio named something like “AgarPlugin” and add **references** to `%DarkRift.Server.dll` and `%DarkRift.dll`.
 
-> [!WARNING]
-> If you are using the Free version of DarkRift you will need to create a .NET Framework plugin, only the .NET Core build of the Pro version of DarkRift supports .NET Core/Standard plugins.
+**Rename** the default class to `AgarPlayerManager` and rename the file similarly. Add using directives to the top of the file (`using %DarkRift;` and `using %DarkRift.Server;`) so that we have access to both `%DarkRift.Server` and `%DarkRift` **namespaces**.
 
-**Rename** the default class to `AgarPlayerManager` and rename the file similarly. Add using directives to the top of the file (`using DarkRift;` and `using DarkRift.Server;`) so that we have access to both `DarkRift.Server` and `DarkRift` **namespaces**.
-
-All plugins in DarkRift must **inherit** from `DarkRift.Server.Plugin` so that DarkRift can correctly discover and instantiate them and so it can easily read details about your plugin. It is also your entry point into DarkRift’s API so that you make changes on the correct server instances.
+All plugins in %DarkRift must **inherit** from `%DarkRift.Server.Plugin` so that %DarkRift can correctly discover and instantiate them and so it can easily read details about your plugin. It is also your entry point into %DarkRift’s API so that you make changes on the correct server instances.
 
 Go ahead and make `AgarPlayerManager` **inherit** from `Plugin`, you’ll notice Visual Studio throws an error saying that there is no **constructor** so add it. You’ll then notice it says that it does not implement a number of abstract properties, once again add them. If you’re following along, you should have a class like this:
 ```csharp
@@ -61,4 +58,4 @@ public class AgarPlayerManager : Plugin
     }
 }
 ```
-If you want to try it you can **build** the library and place the **DLL** in **DarkRift’s plugins folder**, when you start DarkRift you should see your plugin get loaded in!
+If you want to try it you can **build** the library and place the **DLL** in **%DarkRift’s plugins folder**, when you start %DarkRift you should see your plugin get loaded in!

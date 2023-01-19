@@ -118,7 +118,7 @@ using DarkRift.Client.Unity;
 public class NetworkPlayerManager : MonoBehaviour
 {
     [SerializeField]
-    [Tooltip("The DarkRift client to communicate on.")]
+    [Tooltip("The %DarkRift client to communicate on.")]
     UnityClient client;
 
     Dictionary<ushort, AgarObject> networkPlayers = new Dictionary<ushort, AgarObject>();

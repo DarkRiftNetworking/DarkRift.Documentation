@@ -1,12 +1,10 @@
 # Matchmaking
-DarkRift Networking includes a matchmaker plugin for games where players need to be grouped into 'rooms' according to certain metrics. This page will guide you through using the matchmaker.
-
-Note, the matchmaker is only included with the Pro version.
+%DarkRift Networking includes a matchmaker plugin for games where players need to be grouped into 'rooms' according to certain metrics. This page will guide you through using the matchmaker.
 
 ## Matchmaker Setup
-The DarkRift matchmaker is implemented as an abstract plugin in the DarkRift.Server.Plugins.Matchmaking namespace. This means to use it you must inherit from it to provide it some basic implementation details including a ranking function and a type parameter.
+The %DarkRift matchmaker is implemented as an abstract plugin in the %DarkRift.Server.Plugins.Matchmaking namespace. This means to use it you must inherit from it to provide it some basic implementation details including a ranking function and a type parameter.
 
-The type parameter is required to set the type of object the matchmaker will be operating on. The matchmaker can match groups of any object type as some users may want to simply match IClients while some users may wish to match on their own player representations etc. The objects being matched by the matchmaker are known in DarkRift as 'entities' to generalise them from their actual type or purpose.
+The type parameter is required to set the type of object the matchmaker will be operating on. The matchmaker can match groups of any object type as some users may want to simply match IClients while some users may wish to match on their own player representations etc. The objects being matched by the matchmaker are known in %DarkRift as 'entities' to generalise them from their actual type or purpose.
 
 The ranking function is a method taking 2 entities and providing a value between 0 and 1 (inclusive) to rate how good a match between them would be. For example, if they would be perfect in a group together it would return nearer 1, if they were OK for each other it might return 0.25-0.75 and if they were an appauling match with each other it would return nearer 0.
 
@@ -77,7 +75,7 @@ Setting the tick period to be higher will allow more time for users to queue up 
 Balancing these values is essential to good matchmaking and will depend heavily on the rate entities queue and the tolerances allowable between suitability metrics.
 
 ## Matchmaker Ranking Builder
-To assist in creating a good ranking function DarkRift provides the MatchmakerRankingBuilder. This class provides a set of methods for the common computations you might need to perform within a builder pattern-style interface.
+To assist in creating a good ranking function %DarkRift provides the MatchmakerRankingBuilder. This class provides a set of methods for the common computations you might need to perform within a builder pattern-style interface.
 
 When building the ranking the builder takes in weights for each metric you compare allowing you to add or reduce the emphasis on certain metrics. It's important for these weights to total 1.0 otherwise you may find the resulting ranking doens't make sense.
 

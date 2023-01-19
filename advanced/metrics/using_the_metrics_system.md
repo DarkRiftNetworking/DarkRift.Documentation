@@ -1,5 +1,5 @@
 # Using the Metrics System
-DarkRift's metrics system exposes a number of key metrics about the server and its plugins to be graphed or alerted on by external applications. By default, DarkRift comes with support for [Prometheus](https://prometheus.io/) but the system can be extended easily to support other metrics systems.
+%DarkRift's metrics system exposes a number of key metrics about the server and its plugins to be graphed or alerted on by external applications. By default, %DarkRift comes with support for [Prometheus](https://prometheus.io/) but the system can be extended easily to support other metrics systems.
 
 Before metrics will be reported, a metrics writer needs to be configured.
 
@@ -56,7 +56,7 @@ public void MyOperationCompleted(double elapsedTime)
 ## Using Tags
 Tags, sometimes called labels in other systems, can be used to categorize a metric into more specific subgroups.
 
-In DarkRift this is done by specifying the set of keys when creating the metric and then providing a set of values for those tags before being able to use the metric.
+In %DarkRift this is done by specifying the set of keys when creating the metric and then providing a set of values for those tags before being able to use the metric.
 ```csharp
 private readonly TaggedMetricBuilder<IHistogramMetric> myHistogram;
 
@@ -73,7 +73,7 @@ public void MyOperationCompleted(double elapsedTime)
 For performance reasons you can store and reuse the result of the call to `WithTags`.
 
 ## Internal Metrics
-DarkRift reports a number of internal metrics automatically however, to ensure performance, metrics that would be emitted per message are disabled by default. These can be enabled using the `enablePerMessageMetrics` option:
+%DarkRift reports a number of internal metrics automatically however, to ensure performance, metrics that would be emitted per message are disabled by default. These can be enabled using the `enablePerMessageMetrics` option:
 ```xml
 <metrics enablePerMessageMetrics="true">
   <metricsWriter type="PrometheusEndpoint"/>

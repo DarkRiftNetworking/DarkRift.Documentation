@@ -1,10 +1,10 @@
 # The Unity Scene
 ## Setting Up DarkRift
-In a blank Unity scene add an empty GameObject, rename it `Network` and then add a `DarkRift -> Client` component.
+In a blank Unity scene add an empty GameObject, rename it `Network` and then add a `%DarkRift -> Client` component.
 
-This is the first fundamental DarkRift part, the client script connects to the server for you and allows you to send and receive messages - plus it even has some useful tools built in for you! Let’s look at the Unity interface for it.
+This is the first fundamental %DarkRift part, the client script connects to the server for you and allows you to send and receive messages - plus it even has some useful tools built in for you! Let’s look at the Unity interface for it.
 
-![UnityClient settings](~/images/getting_started/unity_client.png "The settings for the UnityClient")
+![UnityClient settings](https://www.darkriftnetworking.com/DarkRift2/Docs/2.10.0/images/getting_started/unity_client.png "The settings for the UnityClient")
 
 - `Address` is the host IP address that the server you wish to connect to is located on, by default it’s set to local host (the same computer you’re running the game on) for development.
 - `Port` is the port number you’ve set the server to listen on, by default it’s 4296.
