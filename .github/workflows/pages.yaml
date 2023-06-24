@@ -1,0 +1,27 @@
+# Your GitHub workflow file under .github/workflows/
+#
+
+name: Pages
+on: [push]
+jobs:
+  publish-docs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Chekout
+        uses: actions/checkout@v3
+      - name: Dotnet Setup
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: 7.x
+      - name: build
+        uses: mattnotmitt/doxygen-action@v1.9.5
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+<<<<<<< HEAD
+          publish_dir: _docs/html
+=======
+          publish_dir: Documentation/html
+>>>>>>> 3950489 (yolo test see what happens)
