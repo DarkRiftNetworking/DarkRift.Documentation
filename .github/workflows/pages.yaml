@@ -20,8 +20,4 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-<<<<<<< HEAD
           publish_dir: _docs/html
-=======
-          publish_dir: Documentation/html
->>>>>>> 3950489 (yolo test see what happens)
