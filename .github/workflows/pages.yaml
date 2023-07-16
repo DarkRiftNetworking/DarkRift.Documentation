@@ -1,6 +1,3 @@
-# Your GitHub workflow file under .github/workflows/
-#
-
 name: Pages
 on:
   workflow_dispatch:
