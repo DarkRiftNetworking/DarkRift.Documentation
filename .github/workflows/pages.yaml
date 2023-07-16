@@ -2,7 +2,8 @@
 #
 
 name: Pages
-on: [push]
+on:
+  workflow_dispatch:
 jobs:
   publish-docs:
     runs-on: ubuntu-latest
